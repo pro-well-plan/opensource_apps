@@ -1,5 +1,6 @@
 import streamlit as st
 from well_profile_app import add_well_profile_app
+from petrodc_app import add_petrodc_app
 from others import under_construction
 from side_bar import add_side_bar, main_selection
 from footer import add_footer
@@ -13,7 +14,11 @@ def main():
 
     if selection == 'Wellbore 3D':
         add_well_profile_app()
-    else:
+
+    if selection == 'Data Collector':
+        add_petrodc_app()
+
+    if selection in ['Temperature Distribution', 'Load Cases']:
         under_construction()
 
     add_footer()

@@ -5,7 +5,7 @@ import base64
 
 
 def add_well_profile_app():
-    st.title('WELLBORE 3D APP')
+    st.subheader('WELLBORE 3D APP')
 
     st.write("This is a web based application to create, manipulate and visualize 3D wellbore trajectory data, "
              "based on well_profile.")
@@ -160,8 +160,8 @@ def add_well_profile_app():
                     st.dataframe(trajectory.df())
                     csv = trajectory.df().to_csv(index=False)
                     b64 = base64.b64encode(csv.encode()).decode()  # some strings
-                    linko = f'<a href="data:file/csv;base64,{b64}" download="wellpath.csv">Download dataset</a>'
-                    st.markdown(linko, unsafe_allow_html=True)
+                    link = f'<a href="data:file/csv;base64,{b64}" download="wellpath.csv">Download dataset</a>'
+                    st.markdown(link, unsafe_allow_html=True)
 
         if st.button('Generate 3D plot'):
 
