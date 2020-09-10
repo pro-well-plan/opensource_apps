@@ -5,9 +5,11 @@ def main_selection():
     st.sidebar.title('Open Source Apps')
     selection = st.sidebar.radio("Select the app to use",
                                  ['Wellbore 3D',
+                                  'Data Collector',
+                                  'Torque & Drag',
                                   'Temperature Distribution',
-                                  'Load Cases',
-                                  'Data Collector'])
+                                  'Load Cases'
+                                  ])
 
     return selection
 
