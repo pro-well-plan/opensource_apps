@@ -47,10 +47,10 @@ def elevation_app():
 
     if elevation_type == 'a whole area':
 
-        lat_min = st.number_input('lat-min:', value=59.00, step=0.01)
-        lat_max = st.number_input('lat-min:', value=60.00, step=0.01)
-        lon_min = st.number_input('lon-min:', value=3.00, step=0.01)
-        lon_max = st.number_input('lon-min:', value=5.00, step=0.01)
+        lat_min = st.number_input('Lat-min, [°]:', value=59.00, step=0.01)
+        lat_max = st.number_input('Lat-max, [°]:', value=60.00, step=0.01)
+        lon_min = st.number_input('Lon-min, [°]:', value=3.00, step=0.01)
+        lon_max = st.number_input('Lon-max, [°]:', value=5.00, step=0.01)
 
         points = {'lat': [lat_min, lat_min, lat_max, lat_max],
                   'lon': [lon_min, lon_max, lon_min, lon_max]}
