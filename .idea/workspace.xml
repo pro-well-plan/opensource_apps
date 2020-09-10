@@ -19,13 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="763af28b-90b0-4373-a20d-87468b9dac24" name="Default Changelist" comment="Including Athabasca well logs (petrodc app)">
-      <change afterPath="$PROJECT_DIR$/pwploads_app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pwptemp_app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/torque_drag_app.py" afterDir="false" />
+    <list default="true" id="763af28b-90b0-4373-a20d-87468b9dac24" name="Default Changelist" comment="Adding info pwptemp, pwploads, torque_drag">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/well_profile_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/well_profile_app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +47,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -71,7 +67,7 @@
       <workItem from="1599552400922" duration="359000" />
       <workItem from="1599553620928" duration="2927000" />
       <workItem from="1599657457207" duration="7522000" />
-      <workItem from="1599730978167" duration="8873000" />
+      <workItem from="1599730978167" duration="9645000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1599552695219</created>
@@ -108,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599746113798</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Adding info pwptemp, pwploads, torque_drag">
+      <created>1599747298252</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1599747298252</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,7 +134,8 @@
     <MESSAGE value="Including topo-bathymetry data (petrodc app)" />
     <MESSAGE value="Including NPD data (petrodc app)" />
     <MESSAGE value="Including Athabasca well logs (petrodc app)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Including Athabasca well logs (petrodc app)" />
+    <MESSAGE value="Adding info pwptemp, pwploads, torque_drag" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding info pwptemp, pwploads, torque_drag" />
   </component>
   <component name="WindowStateProjectService">
     <state x="444" y="259" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599731180570">
@@ -142,10 +146,14 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="144" y="79" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1599743235962" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1599746127751">
+    <state x="221" y="89" key="SettingsEditor" timestamp="1599747469325">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1599746127751" />
+    <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1599747469325" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1599747301070">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1599747301069" />
     <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599660722634">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
