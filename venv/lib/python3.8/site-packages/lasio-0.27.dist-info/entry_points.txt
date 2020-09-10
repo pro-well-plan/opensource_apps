@@ -1,0 +1,6 @@
+[console_scripts]
+las2excel = lasio.excel:main
+las2excelbulk = lasio.excel:main_bulk
+lasio = lasio:version
+lasversionconvert = lasio.convert_version:convert_version
+

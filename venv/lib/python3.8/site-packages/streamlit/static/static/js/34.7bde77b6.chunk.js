@@ -1,0 +1,3 @@
+/*! For license information please see 34.7bde77b6.chunk.js.LICENSE.txt */
+(this["webpackJsonpstreamlit-browser"]=this["webpackJsonpstreamlit-browser"]||[]).push([[34],{2382:function(t,e,r){"use strict";r.r(e);var s=r(0),n=r.n(s),c=r(44);function u({element:t,width:e}){const r=Object(s.useRef)(null);Object(s.useEffect)(()=>{r.current&&(r.current.currentTime=t.get("startTime"))},[t]);const u=Object(c.b)(t.get("url"));return n.a.createElement("audio",{id:"audio",ref:r,controls:!0,src:u,className:"stAudio",style:{width:e}})}r.d(e,"default",(function(){return u}))}}]);
+//# sourceMappingURL=34.7bde77b6.chunk.js.map
