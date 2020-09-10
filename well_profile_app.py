@@ -14,10 +14,10 @@ def add_well_profile_app():
             as they are needed; suggestions and contributions of all kinds are very welcome.')
 
     st.markdown('[source code]'
-                        '(https://github.com/pro-well-plan/well_profile)')
+                '(https://github.com/pro-well-plan/well_profile)')
 
     st.markdown('[python package]'
-                        '(https://pypi.org/project/well-profile/)')
+                '(https://pypi.org/project/well-profile/)')
 
     building_preference = st.selectbox(
             'Select the way to start:',
