@@ -1,5 +1,6 @@
 import streamlit as st
 import petrodc.usgs_eros as eros
+import petrodc.npd as npd
 import pandas as pd
 import base64
 
@@ -20,12 +21,15 @@ def add_petrodc_app():
                 '(https://pypi.org/project/petrodc/)')
 
     database = st.selectbox(
-        'Select a well profile type',
+        'Select the data source:',
         ('Topo-bathymetry', 'Wellbore data NPD', 'Athabasca well logs')
     )
 
     if database == 'Topo-bathymetry':
         elevation_app()
+
+    if database == 'Wellbore data NPD':
+        npd_app()
 
 
 def elevation_app():
@@ -69,3 +73,34 @@ def elevation_app():
         if st.button('Calculate'):
             elevation = eros.point_elev(lat, lon)
             st.write('The elevation for that location is ' + str(elevation) + ' meters')
+
+
+def npd_app():
+
+    npd_dataset = ['oil samples',
+                   'NPD ID',
+                   'lithostratigraphy',
+                   'history',
+                   'drilling mud',
+                   'drill stem tests',
+                   'documents',
+                   'cores',
+                   'core photos',
+                   'coordinates',
+                   'casing and leak off',
+                   'exploration',
+                   'development',
+                   'shallow']
+
+    select_npd_dataset = st.radio("Select the dataset:", npd_dataset)
+
+    if st.button("Show the selected dataset"):
+        dataset_no = npd_dataset.index(select_npd_dataset) + 1
+        df = npd.wellbore(dataset_no)
+        st.dataframe(df)
+        csv = df.to_csv(index=False)
+        b64 = base64.b64encode(csv.encode()).decode()  # some strings
+        link = f'<a href="data:file/csv;base64,{b64}" download="elevation_data.csv">Download dataset</a>'
+        st.markdown(link, unsafe_allow_html=True)
+
+
