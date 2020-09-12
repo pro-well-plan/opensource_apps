@@ -30,7 +30,7 @@ def main():
     if selection == 'Torque & Drag':
         add_torque_drag_app()
 
-    if selection in ['Temperature Distribution', 'Load Cases', 'Torque & Drag']:
+    if selection in ['Temperature Distribution', 'Load Cases']:
         under_construction()
 
     add_footer()

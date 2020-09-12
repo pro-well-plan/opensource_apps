@@ -19,9 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="763af28b-90b0-4373-a20d-87468b9dac24" name="Default Changelist" comment="Setting versions">
+    <list default="true" id="763af28b-90b0-4373-a20d-87468b9dac24" name="Default Changelist" comment="fix typo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/petrodc_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/petrodc_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/torque_drag_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/torque_drag_app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +68,8 @@
       <workItem from="1599552400922" duration="359000" />
       <workItem from="1599553620928" duration="2927000" />
       <workItem from="1599657457207" duration="7522000" />
-      <workItem from="1599730978167" duration="10392000" />
+      <workItem from="1599730978167" duration="10901000" />
+      <workItem from="1599941727411" duration="5438000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1599552695219</created>
@@ -119,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599748264977</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fix typo">
+      <created>1599749547054</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1599749547054</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,7 +152,8 @@
     <MESSAGE value="Including Athabasca well logs (petrodc app)" />
     <MESSAGE value="Adding info pwptemp, pwploads, torque_drag" />
     <MESSAGE value="Setting versions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Setting versions" />
+    <MESSAGE value="fix typo" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix typo" />
   </component>
   <component name="WindowStateProjectService">
     <state x="444" y="259" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599731180570">
@@ -159,10 +168,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1599747469325" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1599748273956">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1599749549328">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1599748273956" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1599749549328" />
     <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599660722634">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
