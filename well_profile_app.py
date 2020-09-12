@@ -43,84 +43,68 @@ def add_well_profile_app():
 
         # Create a vertical well
         if profile == 'Vertical':
-            mdt = st.number_input("Final depth, " + length_units, value=3000, step=100)
             profile = 'V'
-            traj = wp.get(mdt, grid_length=10, units=units)
+            param_dict = set_parameters(profile, length_units)
+            traj = wp.get(param_dict['mdt'], grid_length=10, units=units)
 
             data_and_plot(traj)
 
         # Create a J-type well
         if profile == 'J-type':
-            mdt = st.number_input("Final depth, " + length_units, value=3000, step=100)
-            kop = st.number_input("Kick-off point, " + length_units, value=1000, step=100)
-            eob = st.number_input("End of build, " + length_units, value=1500, step=100)
-            build_angle = st.number_input("Build angle, °", value=45, step=1)
             profile = 'J'
-            traj = wp.get(mdt,
+            param_dict = set_parameters(profile, length_units)
+            traj = wp.get(param_dict['mdt'],
                           grid_length=10,
                           profile=profile,
-                          build_angle=build_angle,
-                          kop=kop,
-                          eob=eob,
+                          build_angle=param_dict['build_angle'],
+                          kop=param_dict['kop'],
+                          eob=param_dict['eob'],
                           units=units)
 
             data_and_plot(traj)
 
         # Create a S-type well
         if profile == 'S-type':
-            mdt = st.number_input("Final depth, " + length_units, value=3000, step=100)
-            kop = st.number_input("Kick-off point, " + length_units, value=1000, step=100)
-            eob = st.number_input("End of build, " + length_units, value=1500, step=100)
-            build_angle = st.number_input("Build angle, °", value=45, step=1)
-            sod = st.number_input("Start of drop, " + length_units, value=2500, step=100)
-            eod = st.number_input("End of drop, " + length_units, value=3000, step=100)
             profile = 'S'
-            traj = wp.get(mdt,
+            param_dict = set_parameters(profile, length_units)
+            traj = wp.get(param_dict['mdt'],
                           grid_length=10,
                           profile=profile,
-                          build_angle=build_angle,
-                          kop=kop,
-                          eob=eob,
-                          sod=sod,
-                          eod=eod,
+                          build_angle=param_dict['build_angle'],
+                          kop=param_dict['kop'],
+                          eob=param_dict['eob'],
+                          sod=param_dict['sod'],
+                          eod=param_dict['eod'],
                           units=units)
 
             data_and_plot(traj)
 
         # Create a horizontal single curve well
         if profile == 'Horizontal single curve':
-            mdt = st.number_input("Final depth, " + length_units, value=3000, step=100)
-            kop = st.number_input("Kick-off point, " + length_units, value=1000, step=100)
-            eob = st.number_input("End of build, " + length_units, value=1500, step=100)
-            build_angle = st.number_input("Build angle, °", value=45, step=1)
             profile = 'H1'
-            traj = wp.get(mdt,
+            param_dict = set_parameters(profile, length_units)
+            traj = wp.get(param_dict['mdt'],
                           grid_length=10,
                           profile=profile,
-                          build_angle=build_angle,
-                          kop=kop,
-                          eob=eob,
+                          kop=param_dict['kop'],
+                          eob=param_dict['eob'],
                           units=units)
 
             data_and_plot(traj)
 
         # Create a horizontal double curve well
         if profile == 'Horizontal double curve':
-            mdt = st.number_input("Final depth, " + length_units, value=3000, step=100)
-            kop = st.number_input("Kick-off point, " + length_units, value=1000, step=100)
-            eob = st.number_input("End of build, " + length_units, value=1500, step=100)
-            build_angle = st.number_input("Build angle, °", value=45, step=1)
-            kop2 = st.number_input("Kick-off point 2, " + length_units, value=2000, step=100)
-            eob2 = st.number_input("End of build 2, " + length_units, value=2500, step=100)
             profile = 'H2'
-            traj = wp.get(mdt,
+            param_dict = set_parameters(profile, length_units)
+
+            traj = wp.get(param_dict['mdt'],
                           grid_length=10,
                           profile=profile,
-                          build_angle=build_angle,
-                          kop=kop,
-                          eob=eob,
-                          kop2=kop2,
-                          eob2=eob2,
+                          build_angle=param_dict['build_angle'],
+                          kop=param_dict['kop'],
+                          eob=param_dict['eob'],
+                          kop2=param_dict['kop2'],
+                          eob2=param_dict['eob2'],
                           units=units)
 
             data_and_plot(traj)
@@ -165,8 +149,11 @@ def add_well_profile_app():
 
         if st.button('Generate 3D plot'):
 
-            fig = wellbores_data[0].plot(add_well=wellbores_data[1:], names=wellbores_names)
-            st.plotly_chart(fig)
+            if len(wellbores_data) == 0:
+                st.warning('No data loaded')
+            else:
+                fig = wellbores_data[0].plot(add_well=wellbores_data[1:], names=wellbores_names)
+                st.plotly_chart(fig)
 
 
 def data_and_plot(trajectory):
@@ -181,3 +168,46 @@ def data_and_plot(trajectory):
 
     if st.button("Generate 3D plot"):
         st.plotly_chart(fig)
+
+
+def set_parameters(profile, length_units):
+    mdt = st.number_input("Final depth, " + length_units, value=3000, step=100)
+    result = {'mdt': mdt}
+    s_build_angle, s_kop2, s_eob2, s_sod, s_eod = False, False, False, False, False
+
+    if profile != 'V':
+        kop = st.number_input("Kick-off point, " + length_units, value=1000, step=100)
+        eob = st.number_input("End of build, " + length_units, value=1500, step=100)
+        result['kop'] = kop
+        result['eob'] = eob
+
+    if profile == 'J':
+        s_build_angle = True
+
+    if profile == 'S':
+        s_build_angle = True
+        s_sod = True
+        s_eod = True
+
+    if profile == 'H2':
+        s_build_angle = True
+        s_kop2 = True
+        s_eob2 = True
+
+    if s_build_angle:
+        build_angle = st.number_input("Build angle, °", value=45, step=1)
+        result['build_angle'] = build_angle
+    if s_kop2:
+        kop2 = st.number_input("Kick-off point 2, " + length_units, value=2000, step=100)
+        result['kop2'] = kop2
+    if s_eob2:
+        eob2 = st.number_input("End of build 2, " + length_units, value=2500, step=100)
+        result['eob2'] = eob2
+    if s_sod:
+        sod = st.number_input("Start of drop, " + length_units, value=2500, step=100)
+        result['sod'] = sod
+    if s_eod:
+        eod = st.number_input("End of drop, " + length_units, value=3000, step=100)
+        result['eod'] = eod
+
+    return result
