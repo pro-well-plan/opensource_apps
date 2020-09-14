@@ -1,5 +1,6 @@
 well_profile==0.0.8.1
 petrodc==0.0.6
+torque_drag
 streamlit
 pandas
 xlrd
