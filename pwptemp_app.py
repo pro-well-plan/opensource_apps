@@ -19,7 +19,7 @@ def add_pwptemp_app():
     st.markdown('[python package]'
                 '(https://pypi.org/project/pwptemp/)')
 
-    trajectory = load_trajectory()
+    '''trajectory = load_trajectory()
 
     inputs = {'tin': 20,
               'q': 794.933,
@@ -70,8 +70,8 @@ def add_pwptemp_app():
         inputs['wtg'] = st.number_input("Seawater thermal gradient ,°C/m, in", value=0.0238, step=0.01)
 
     # Adding casings
-    """csg_no = st.number_input("Number of casings", value=0, step=1)
-    casings = add_casings(csg_no)"""
+    csg_no = st.number_input("Number of casings", value=0, step=1)
+    casings = add_casings(csg_no)
 
     plot_type = st.multiselect('Select the plots you want to generate',
                                ['MD vs Temperature', 'Temperature behavior'], ['MD vs Temperature'])
@@ -88,7 +88,7 @@ def add_pwptemp_app():
                 st.plotly_chart(temp_object.plot())
 
             if 'Temperature behavior' in plot_type:
-                st.plotly_chart(temp_object.behavior().plot())
+                st.plotly_chart(temp_object.behavior().plot())'''
 
 
 def add_casings(csg_no):
