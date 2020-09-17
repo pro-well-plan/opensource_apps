@@ -10,6 +10,11 @@ from footer import add_footer
 
 
 def main():
+    st.beta_set_page_config(
+        page_title="PWP - Open Source",
+        page_icon='https://user-images.githubusercontent.com/52009346/93438445-9c26e400-f8cd-11ea-9183-b6df80ddd318.png'
+    )
+
     st.image('https://user-images.githubusercontent.com/52009346/69100304-2eb3e800-0a5d-11ea-9a3a-8e502af2120b.png',
              use_column_width=True)
 
