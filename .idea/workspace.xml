@@ -19,8 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="763af28b-90b0-4373-a20d-87468b9dac24" name="Default Changelist" comment="set page name and favicon">
+    <list default="true" id="763af28b-90b0-4373-a20d-87468b9dac24" name="Default Changelist" comment="update requirements.txt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwptemp_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/pwptemp_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/side_bar.py" beforeDir="false" afterPath="$PROJECT_DIR$/side_bar.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +48,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$APPLICATION_CONFIG_DIR$/scratches" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -128,7 +130,8 @@
       <workItem from="1600012437727" duration="1830000" />
       <workItem from="1600070795442" duration="13739000" />
       <workItem from="1600252358721" duration="2727000" />
-      <workItem from="1600325459774" duration="4951000" />
+      <workItem from="1600325459774" duration="5429000" />
+      <workItem from="1600820534664" duration="1359000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1599552695219</created>
@@ -228,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600330197917</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="update requirements.txt">
+      <created>1600427391254</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1600427391254</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,7 +270,8 @@
     <MESSAGE value="Adding temperature distribution app for drilling case" />
     <MESSAGE value="paused pwptemp app" />
     <MESSAGE value="set page name and favicon" />
-    <option name="LAST_COMMIT_MESSAGE" value="set page name and favicon" />
+    <MESSAGE value="update requirements.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="update requirements.txt" />
   </component>
   <component name="WindowStateProjectService">
     <state x="444" y="259" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599731180570">
@@ -271,22 +282,22 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="144" y="79" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1599743235962" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1600426880421">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1600821373478">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1600426880421" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1600426880419">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1600821373478" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1600821373477">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1600426880419" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1600426880418">
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1600821373477" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1600821373475">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1600426880418" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1600426880420">
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1600821373475" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1600821373477">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1600426880420" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1600821373477" />
     <state x="221" y="89" key="SettingsEditor" timestamp="1599747469325">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -295,10 +306,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1600426949388" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1600330200171">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1600427393012">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1600330200171" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1600427393011" />
     <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599660722634">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -310,6 +321,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/opensource_apps$pwptemp_testing.coverage" NAME="pwptemp_testing Coverage Results" MODIFIED="1600329244750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
-    <SUITE FILE_PATH="coverage/opensource_apps$well_profile_testing.coverage" NAME="well_profile_testing Coverage Results" MODIFIED="1600426874263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
+    <SUITE FILE_PATH="coverage/opensource_apps$well_profile_testing.coverage" NAME="well_profile_testing Coverage Results" MODIFIED="1600821369779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
   </component>
 </project>

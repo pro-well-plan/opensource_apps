@@ -17,7 +17,7 @@ def main_selection():
 def add_side_bar():
     # Content in sidebar
 
-    st.sidebar.image('https://www.visinnovasjon.no/wp-content/uploads/2018/10/prowellplan.png',
+    st.sidebar.image('https://user-images.githubusercontent.com/52009346/93951385-73c43d00-fd46-11ea-9265-a795dbe089c9.png',
                      use_column_width=True)
 
     st.sidebar.write('_________________')
