@@ -19,10 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="763af28b-90b0-4373-a20d-87468b9dac24" name="Default Changelist" comment="update requirements.txt">
+    <list default="true" id="763af28b-90b0-4373-a20d-87468b9dac24" name="Default Changelist" comment="test new structure of pwptemp">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pwptemp_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/pwptemp_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/side_bar.py" beforeDir="false" afterPath="$PROJECT_DIR$/side_bar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/well_profile_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/well_profile_app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +131,9 @@
       <workItem from="1600070795442" duration="13739000" />
       <workItem from="1600252358721" duration="2727000" />
       <workItem from="1600325459774" duration="5429000" />
-      <workItem from="1600820534664" duration="1359000" />
+      <workItem from="1600820534664" duration="2343000" />
+      <workItem from="1600873427953" duration="203000" />
+      <workItem from="1601384461466" duration="2089000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1599552695219</created>
@@ -238,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600427391254</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="test new structure of pwptemp">
+      <created>1600822048801</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1600822048801</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,7 +280,8 @@
     <MESSAGE value="paused pwptemp app" />
     <MESSAGE value="set page name and favicon" />
     <MESSAGE value="update requirements.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="update requirements.txt" />
+    <MESSAGE value="test new structure of pwptemp" />
+    <option name="LAST_COMMIT_MESSAGE" value="test new structure of pwptemp" />
   </component>
   <component name="WindowStateProjectService">
     <state x="444" y="259" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599731180570">
@@ -282,22 +292,22 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="144" y="79" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1599743235962" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1600821373478">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1600822957344">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1600821373478" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1600821373477">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1600822957344" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1600822957342">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1600821373477" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1600821373475">
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1600822957341" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1600822957340">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1600821373475" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1600821373477">
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1600822957340" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1600822957343">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1600821373477" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1600822957343" />
     <state x="221" y="89" key="SettingsEditor" timestamp="1599747469325">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -306,10 +316,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1600426949388" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1600427393012">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1600822054136">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1600427393011" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1600822054136" />
     <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599660722634">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

@@ -21,7 +21,7 @@ def add_well_profile_app():
 
     building_preference = st.selectbox(
             'Select the way to start:',
-            ('Load from excel file', 'Create a new trajectory')
+            ('Load existing trajectory', 'Create a new trajectory')
         )
 
     units = st.selectbox(
@@ -45,7 +45,8 @@ def add_well_profile_app():
         if profile == 'Vertical':
             profile = 'V'
             param_dict = set_parameters(profile, length_units)
-            traj = wp.get(param_dict['mdt'], grid_length=10, units=units)
+            traj = wp.get(param_dict['mdt'], cells_no=param_dict['cells_no'], units=units,
+                          set_start=param_dict['start'])
 
             data_and_plot(traj)
 
@@ -54,12 +55,13 @@ def add_well_profile_app():
             profile = 'J'
             param_dict = set_parameters(profile, length_units)
             traj = wp.get(param_dict['mdt'],
-                          grid_length=10,
+                          cells_no=param_dict['cells_no'],
                           profile=profile,
                           build_angle=param_dict['build_angle'],
                           kop=param_dict['kop'],
                           eob=param_dict['eob'],
-                          units=units)
+                          units=units,
+                          set_start=param_dict['start'])
 
             data_and_plot(traj)
 
@@ -68,14 +70,15 @@ def add_well_profile_app():
             profile = 'S'
             param_dict = set_parameters(profile, length_units)
             traj = wp.get(param_dict['mdt'],
-                          grid_length=10,
+                          cells_no=param_dict['cells_no'],
                           profile=profile,
                           build_angle=param_dict['build_angle'],
                           kop=param_dict['kop'],
                           eob=param_dict['eob'],
                           sod=param_dict['sod'],
                           eod=param_dict['eod'],
-                          units=units)
+                          units=units,
+                          set_start=param_dict['start'])
 
             data_and_plot(traj)
 
@@ -84,11 +87,12 @@ def add_well_profile_app():
             profile = 'H1'
             param_dict = set_parameters(profile, length_units)
             traj = wp.get(param_dict['mdt'],
-                          grid_length=10,
+                          cells_no=param_dict['cells_no'],
                           profile=profile,
                           kop=param_dict['kop'],
                           eob=param_dict['eob'],
-                          units=units)
+                          units=units,
+                          set_start=param_dict['start'])
 
             data_and_plot(traj)
 
@@ -98,18 +102,19 @@ def add_well_profile_app():
             param_dict = set_parameters(profile, length_units)
 
             traj = wp.get(param_dict['mdt'],
-                          grid_length=10,
+                          cells_no=param_dict['cells_no'],
                           profile=profile,
                           build_angle=param_dict['build_angle'],
                           kop=param_dict['kop'],
                           eob=param_dict['eob'],
                           kop2=param_dict['kop2'],
                           eob2=param_dict['eob2'],
-                          units=units)
+                          units=units,
+                          set_start=param_dict['start'])
 
             data_and_plot(traj)
 
-    if building_preference == 'Load from excel file':
+    if building_preference == 'Load existing trajectory':
 
         st.set_option('deprecation.showfileUploaderEncoding', False)
         wells_no = st.number_input('Number of files:', step=1, value=1)
@@ -119,7 +124,18 @@ def add_well_profile_app():
 
         for x in range(wells_no):
 
+            st.write('_________________')
+
             well_name = st.text_input('Set name:', value='well ' + str(x+1))
+
+            start = {'north': 0, 'east': 0}
+
+            if st.checkbox('Set coordinates of initial point:', key='set_start' + str(x)):
+                start_north = st.number_input("Initial point, North, " + length_units, value=0, step=1,
+                                              key='initial_north' + str(x))
+                start_east = st.number_input("Initial point, East, " + length_units, value=0, step=1,
+                                             key='initial_east' + str(x))
+                start = {'north': start_north, 'east': start_east}
 
             file_type = st.selectbox("File format",
                                      ['excel', 'csv'],
@@ -133,7 +149,7 @@ def add_well_profile_app():
                 else:
                     df = pd.read_csv(uploaded_file)
 
-                trajectory = wp.load(df, grid_length=10, units=units)
+                trajectory = wp.load(df, units=units, set_start=start)
                 wellbores_data.append(trajectory)
                 wellbores_names.append(well_name)
 
@@ -172,7 +188,12 @@ def data_and_plot(trajectory):
 
 def set_parameters(profile, length_units):
     mdt = st.number_input("Final depth, " + length_units, value=3000, step=100)
-    result = {'mdt': mdt}
+    cells_no = st.number_input("Number of cells", value=100, step=1)
+    start_north = st.number_input("Initial point, North, " + length_units, value=0, step=1)
+    start_east = st.number_input("Initial point, East, " + length_units, value=0, step=1)
+    start_depth = st.number_input("Initial point, Depth, " + length_units, value=0, step=1)
+    start = {'north': start_north, 'east': start_east, 'depth': start_depth}
+    result = {'mdt': mdt, 'cells_no': cells_no, 'start': start}
     s_build_angle, s_kop2, s_eob2, s_sod, s_eod = False, False, False, False, False
 
     if profile != 'V':
