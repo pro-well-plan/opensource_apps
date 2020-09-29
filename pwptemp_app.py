@@ -19,7 +19,7 @@ def add_pwptemp_app():
     st.markdown('[python package]'
                 '(https://pypi.org/project/pwptemp/)')
 
-    inputs = set_default_values()
+    """inputs = set_default_values()
 
     trajectory = load_trajectory()
 
@@ -56,8 +56,8 @@ def add_pwptemp_app():
     if len(casings) == 0:
         casings = None
 
-    """plot_type = st.multiselect('Select the plots you want to generate',
-                               ['MD vs Temperature', 'Temperature behavior'], ['MD vs Temperature'])"""
+    #plot_type = st.multiselect('Select the plots you want to generate',
+                               #['MD vs Temperature', 'Temperature behavior'], ['MD vs Temperature'])
 
     if st.button('Run'):
 
@@ -69,7 +69,7 @@ def add_pwptemp_app():
 
             st.plotly_chart(ptd.plot_distribution(temp_object))
 
-    st.write('More features will be added soon...')
+    st.write('More features will be added soon...')"""
 
 
 def add_casings(csg_no):
@@ -97,7 +97,7 @@ def load_trajectory():
         else:
             df = pd.read_csv(uploaded_file)
 
-        trajectory = wp.load(df, grid_length=50)
+        trajectory = wp.load(df)
 
     return trajectory
 
@@ -125,6 +125,3 @@ def set_default_values():
               }
 
     return inputs
-
-
-

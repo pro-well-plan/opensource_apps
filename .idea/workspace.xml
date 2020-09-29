@@ -19,10 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="763af28b-90b0-4373-a20d-87468b9dac24" name="Default Changelist" comment="test new structure of pwptemp">
+    <list default="true" id="763af28b-90b0-4373-a20d-87468b9dac24" name="Default Changelist" comment="update well_profile_app.py v0.1.9. Inputs to set coordinates of initial point">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/well_profile_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/well_profile_app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +131,7 @@
       <workItem from="1600325459774" duration="5429000" />
       <workItem from="1600820534664" duration="2343000" />
       <workItem from="1600873427953" duration="203000" />
-      <workItem from="1601384461466" duration="2089000" />
+      <workItem from="1601384461466" duration="3033000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1599552695219</created>
@@ -247,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600822048801</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="update well_profile_app.py v0.1.9. Inputs to set coordinates of initial point">
+      <created>1601386902615</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1601386902615</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,7 +286,8 @@
     <MESSAGE value="set page name and favicon" />
     <MESSAGE value="update requirements.txt" />
     <MESSAGE value="test new structure of pwptemp" />
-    <option name="LAST_COMMIT_MESSAGE" value="test new structure of pwptemp" />
+    <MESSAGE value="update well_profile_app.py v0.1.9. Inputs to set coordinates of initial point" />
+    <option name="LAST_COMMIT_MESSAGE" value="update well_profile_app.py v0.1.9. Inputs to set coordinates of initial point" />
   </component>
   <component name="WindowStateProjectService">
     <state x="444" y="259" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599731180570">
@@ -316,10 +322,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1600426949388" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1600822054136">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1601386904749">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1600822054136" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1601386904749" />
     <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599660722634">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
