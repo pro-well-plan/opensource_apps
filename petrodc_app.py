@@ -33,6 +33,7 @@ def add_petrodc_app():
         npd_app()
 
     if database == 'Athabasca well logs':
+        st.set_option('deprecation.showPyplotGlobalUse', False)
         ags_app()
 
 
@@ -123,11 +124,19 @@ def ags_app():
 
     specific_file = st.number_input('Select the file', value=4, max_value=2173, step=1)
 
-    if st.button("Show dataset"):
+    if st.button("Show well logs"):
         data_dict = ags.get_las(specific_file)
         well_name = str(list(data_dict)[-1])
         st.write("Unique well identifier: " + well_name)
+
+        # Get df
         df = data_dict[well_name]
+
+        # Show plot
+        fig = ags.plot_log(df)
+        st.pyplot(fig)
+
+        # Show dataset
         st.dataframe(df)
         csv = df.to_csv(index=False)
         b64 = base64.b64encode(csv.encode()).decode()  # some strings

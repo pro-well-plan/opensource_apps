@@ -19,9 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="763af28b-90b0-4373-a20d-87468b9dac24" name="Default Changelist" comment="update well_profile_app.py v0.1.9. Inputs to set coordinates of initial point">
+    <list default="true" id="763af28b-90b0-4373-a20d-87468b9dac24" name="Default Changelist" comment="update packages versions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petrodc_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/petrodc_app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,6 +140,7 @@
       <workItem from="1600820534664" duration="2343000" />
       <workItem from="1600873427953" duration="203000" />
       <workItem from="1601384461466" duration="3033000" />
+      <workItem from="1603438798160" duration="2022000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1599552695219</created>
@@ -260,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601386902615</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="update packages versions">
+      <created>1603375335542</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1603375335542</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +303,8 @@
     <MESSAGE value="update requirements.txt" />
     <MESSAGE value="test new structure of pwptemp" />
     <MESSAGE value="update well_profile_app.py v0.1.9. Inputs to set coordinates of initial point" />
-    <option name="LAST_COMMIT_MESSAGE" value="update well_profile_app.py v0.1.9. Inputs to set coordinates of initial point" />
+    <MESSAGE value="update packages versions" />
+    <option name="LAST_COMMIT_MESSAGE" value="update packages versions" />
   </component>
   <component name="WindowStateProjectService">
     <state x="444" y="259" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599731180570">
@@ -306,22 +315,26 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="144" y="79" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1599743235962" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1600822957344">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1603391464150">
+      <screen x="0" y="23" width="1440" height="803" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1600822957344" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1600822957342">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.23.1440.803@0.23.1440.803" timestamp="1603391464150" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1603391464148">
+      <screen x="0" y="23" width="1440" height="803" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1600822957341" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1600822957340">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.23.1440.803@0.23.1440.803" timestamp="1603391464148" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1603391464147">
+      <screen x="0" y="23" width="1440" height="803" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1600822957340" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1600822957343">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.23.1440.803@0.23.1440.803" timestamp="1603391464147" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1603391464149">
+      <screen x="0" y="23" width="1440" height="803" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1600822957343" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.803@0.23.1440.803" timestamp="1603391464149" />
     <state x="221" y="89" key="SettingsEditor" timestamp="1599747469325">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -330,10 +343,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1600426949388" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1601386904749">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1603375340209">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1601386904749" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603375340209" />
     <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599660722634">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
