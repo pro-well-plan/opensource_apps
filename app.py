@@ -4,6 +4,7 @@ from petrodc_app import add_petrodc_app
 from pwptemp_app import add_pwptemp_app
 from pwploads_app import add_pwploads_app
 from torque_drag_app import add_torque_drag_app
+from well_logs_app import add_well_logs_app
 from others import under_construction
 from side_bar import add_side_bar, main_selection
 from footer import add_footer
@@ -37,6 +38,9 @@ def main():
 
     if selection in ['Temperature Distribution', 'Load Cases']:
         under_construction()
+
+    if selection == 'Visualize LAS files':
+        add_well_logs_app()
 
     add_footer()
 

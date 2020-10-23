@@ -19,9 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="763af28b-90b0-4373-a20d-87468b9dac24" name="Default Changelist" comment="update packages versions">
+    <list default="true" id="763af28b-90b0-4373-a20d-87468b9dac24" name="Default Changelist" comment="update petrodc version. adding well logs plot">
+      <change afterPath="$PROJECT_DIR$/SessionState.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/well_logs_app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/petrodc_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/petrodc_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/side_bar.py" beforeDir="false" afterPath="$PROJECT_DIR$/side_bar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/torque_drag_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/torque_drag_app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +144,7 @@
       <workItem from="1600820534664" duration="2343000" />
       <workItem from="1600873427953" duration="203000" />
       <workItem from="1601384461466" duration="3033000" />
-      <workItem from="1603438798160" duration="2022000" />
+      <workItem from="1603438798160" duration="25742000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1599552695219</created>
@@ -268,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603375335542</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="update petrodc version. adding well logs plot">
+      <created>1603441924485</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1603441924485</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,7 +315,8 @@
     <MESSAGE value="test new structure of pwptemp" />
     <MESSAGE value="update well_profile_app.py v0.1.9. Inputs to set coordinates of initial point" />
     <MESSAGE value="update packages versions" />
-    <option name="LAST_COMMIT_MESSAGE" value="update packages versions" />
+    <MESSAGE value="update petrodc version. adding well logs plot" />
+    <option name="LAST_COMMIT_MESSAGE" value="update petrodc version. adding well logs plot" />
   </component>
   <component name="WindowStateProjectService">
     <state x="444" y="259" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599731180570">
@@ -315,25 +327,25 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="144" y="79" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1599743235962" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1603391464150">
-      <screen x="0" y="23" width="1440" height="803" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1603446254574">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1600822957344" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1603446254574" />
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.23.1440.803@0.23.1440.803" timestamp="1603391464150" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1603391464148">
-      <screen x="0" y="23" width="1440" height="803" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1603446254570">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1600822957341" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1603446254570" />
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.23.1440.803@0.23.1440.803" timestamp="1603391464148" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1603391464147">
-      <screen x="0" y="23" width="1440" height="803" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1603446254568">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1600822957340" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1603446254568" />
     <state width="1398" height="245" key="GridCell.Tab.0.left/0.23.1440.803@0.23.1440.803" timestamp="1603391464147" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1603391464149">
-      <screen x="0" y="23" width="1440" height="803" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1603446254572">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1600822957343" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1603446254572" />
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.803@0.23.1440.803" timestamp="1603391464149" />
     <state x="221" y="89" key="SettingsEditor" timestamp="1599747469325">
       <screen x="0" y="0" width="1440" height="900" />
@@ -343,10 +355,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1600426949388" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1603375340209">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1603441929031">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603375340209" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603441929031" />
     <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599660722634">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -359,6 +371,6 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/opensource_apps$app.coverage" NAME="app Coverage Results" MODIFIED="1603369302367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/opensource_apps$pwptemp_testing.coverage" NAME="pwptemp_testing Coverage Results" MODIFIED="1600329244750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
-    <SUITE FILE_PATH="coverage/opensource_apps$well_profile_testing.coverage" NAME="well_profile_testing Coverage Results" MODIFIED="1600821369779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
+    <SUITE FILE_PATH="coverage/opensource_apps$well_profile_testing.coverage" NAME="well_profile_testing Coverage Results" MODIFIED="1603446251567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
   </component>
 </project>

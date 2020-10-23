@@ -8,7 +8,8 @@ def main_selection():
                                   'Data Collector',
                                   'Torque & Drag',
                                   'Temperature Distribution',
-                                  'Load Cases'
+                                  'Load Cases',
+                                  'Visualize LAS files'
                                   ])
 
     return selection

@@ -32,7 +32,7 @@ def add_torque_drag_app():
         else:
             df = pd.read_csv(uploaded_file)
 
-        trajectory = wp.load(df, grid_length=10, units='metric')
+        trajectory = wp.load(df, units='metric')
 
     # Set default parameters
     od_pipe = 4.5
