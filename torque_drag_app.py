@@ -7,7 +7,8 @@ import well_profile as wp
 def add_torque_drag_app():
     st.subheader('Torque and Drag APP')
 
-    st.write("This is a web based application to calculate drag forces and torque along the well")
+    st.write("This is a web based application to calculate drag forces and torque along the well."
+             " This is part of the open source initiative by Pro Well Plan AS.")
 
     st.info('torque_drag is a python package for Torque & Drag calculations. New features are  \
                 added as they are needed; suggestions and contributions of all kinds are very welcome.')
@@ -17,6 +18,9 @@ def add_torque_drag_app():
 
     st.markdown('[python package]'
                 '(https://pypi.org/project/torque_drag/)')
+
+    st.markdown('[About our Open Source initiative]'
+                '(https://prowellplan.com/modern-drilling-organization/open-source-boosting-the-digital-transformation)')
 
     file_type = st.selectbox("File format",
                              ['excel', 'csv'],

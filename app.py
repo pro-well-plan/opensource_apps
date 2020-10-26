@@ -39,7 +39,7 @@ def main():
     if selection in ['Temperature Distribution', 'Load Cases']:
         under_construction()
 
-    if selection == 'Visualize LAS files':
+    if selection == 'Visualize Well Logs':
         add_well_logs_app()
 
     add_footer()

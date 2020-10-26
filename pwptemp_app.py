@@ -7,7 +7,8 @@ import pandas as pd
 def add_pwptemp_app():
     st.subheader('Well Temperature APP')
 
-    st.write("This is a web based application to generate well temperature distributions.")
+    st.write("This is a web based application to generate well temperature distributions."
+             " This is part of the open source initiative by Pro Well Plan AS.")
 
     st.info('pwptemp is a python package for easy calculation of the temperature distribution along  \
              the well. New features are added as they are needed; '
@@ -18,6 +19,9 @@ def add_pwptemp_app():
 
     st.markdown('[python package]'
                 '(https://pypi.org/project/pwptemp/)')
+
+    st.markdown('[About our Open Source initiative]'
+                '(https://prowellplan.com/modern-drilling-organization/open-source-boosting-the-digital-transformation)')
 
     """inputs = set_default_values()
 

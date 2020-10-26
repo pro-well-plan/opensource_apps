@@ -1,5 +1,5 @@
 well_profile==0.2.9
-petrodc==0.1.8
+petrodc==0.1.9
 pwptemp==0.3.0a
 torque_drag
 streamlit

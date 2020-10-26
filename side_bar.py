@@ -9,7 +9,7 @@ def main_selection():
                                   'Torque & Drag',
                                   'Temperature Distribution',
                                   'Load Cases',
-                                  'Visualize LAS files'
+                                  'Visualize Well Logs'
                                   ])
 
     return selection

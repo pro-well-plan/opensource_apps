@@ -10,7 +10,7 @@ def add_petrodc_app():
     st.subheader('Petroleum Data Collector APP')
 
     st.write("This is a web based application to access and visualize petroleum-related data from"
-             " public databases.")
+             " public databases. This is part of the open source initiative by Pro Well Plan AS.")
 
     st.info('petrodc is a python package to get datasets from public sources. New sources are  \
                 added as they are tested; suggestions and contributions of all kinds are very welcome.')
@@ -20,6 +20,9 @@ def add_petrodc_app():
 
     st.markdown('[python package]'
                 '(https://pypi.org/project/petrodc/)')
+
+    st.markdown('[About our Open Source initiative]'
+                '(https://prowellplan.com/modern-drilling-organization/open-source-boosting-the-digital-transformation)')
 
     database = st.selectbox(
         'Select the data source:',
@@ -111,7 +114,7 @@ def npd_app():
         st.dataframe(df)
         csv = df.to_csv(index=False)
         b64 = base64.b64encode(csv.encode()).decode()  # some strings
-        link = f'<a href="data:file/csv;base64,{b64}" download="elevation_data.csv">Download dataset</a>'
+        link = f'<a href="data:file/csv;base64,{b64}" download="npd_wellbore_data.csv">Download dataset</a>'
         st.markdown(link, unsafe_allow_html=True)
 
 
@@ -140,5 +143,5 @@ def ags_app():
         st.dataframe(df)
         csv = df.to_csv(index=False)
         b64 = base64.b64encode(csv.encode()).decode()  # some strings
-        link = f'<a href="data:file/csv;base64,{b64}" download="elevation_data.csv">Download dataset</a>'
+        link = f'<a href="data:file/csv;base64,{b64}" download="athabasca_logs.csv">Download dataset</a>'
         st.markdown(link, unsafe_allow_html=True)

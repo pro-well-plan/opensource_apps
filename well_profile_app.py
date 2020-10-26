@@ -7,8 +7,8 @@ import base64
 def add_well_profile_app():
     st.subheader('WELLBORE 3D APP')
 
-    st.write("This is a web based application to create, manipulate and visualize 3D wellbore trajectory data, "
-             "based on well_profile.")
+    st.write("This is a web based application to create, manipulate and visualize 3D wellbore trajectory data,"
+             " based on well_profile. This is part of the open source initiative by Pro Well Plan AS.")
 
     st.info('well_profile is a python package to generate or load wellbore profiles in 3D. Features are added \
             as they are needed; suggestions and contributions of all kinds are very welcome.')
@@ -18,6 +18,9 @@ def add_well_profile_app():
 
     st.markdown('[python package]'
                 '(https://pypi.org/project/well-profile/)')
+
+    st.markdown('[About our Open Source initiative]'
+                '(https://prowellplan.com/modern-drilling-organization/open-source-boosting-the-digital-transformation)')
 
     building_preference = st.selectbox(
             'Select the way to start:',
