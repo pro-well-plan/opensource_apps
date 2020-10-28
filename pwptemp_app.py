@@ -23,7 +23,7 @@ def add_pwptemp_app():
     st.markdown('[About our Open Source initiative]'
                 '(https://prowellplan.com/modern-drilling-organization/open-source-boosting-the-digital-transformation)')
 
-    """inputs = set_default_values()
+    inputs = set_default_values()
 
     trajectory = load_trajectory()
 
@@ -73,7 +73,7 @@ def add_pwptemp_app():
 
             st.plotly_chart(ptd.plot_distribution(temp_object))
 
-    st.write('More features will be added soon...')"""
+    st.write('More features will be added soon...')
 
 
 def add_casings(csg_no):
