@@ -52,7 +52,7 @@ def add_pwploads_app():
     id_pipe = 7.2
     length_pipe = 1500
     nominal_weight = 100
-    yield_s = 80000
+    grade = 'L-80'
     df_vme = 1.25
     df_burst = 1.1
     df_collapse = 1.1
@@ -64,7 +64,7 @@ def add_pwploads_app():
     f_ov_status = False
     p_test_status = False
     v_avg = 0.3
-    e = 32e6
+    e = 464
     fric = 0.24
     a = 1.5
     cement = False
@@ -77,7 +77,9 @@ def add_pwploads_app():
 
     if st.checkbox('Set Material Properties'):
         nominal_weight = st.number_input('Nominal weight, [kg/m]:', value=100, step=1)
-        yield_s = st.number_input('Yield strength, [psi]:', value=80000, step=10000)
+        grade = st.selectbox("Steel grade:",
+                             ['H-40', 'J-55', 'K-55', 'M-65', 'N-80', 'L-80', 'C-90', 'R-95', 'T-95',
+                              'C-110', 'P-110', 'Q-125'], index=5)
 
     if st.checkbox('Set Design Factors'):
         df_vme = st.number_input('Von Mises:', value=1.25, step=0.1)
@@ -88,7 +90,7 @@ def add_pwploads_app():
 
     casing = pld.Casing(od_pipe, id_pipe, length_pipe,
                         nominal_weight,
-                        yield_s,
+                        int(grade[2:])*1000,
                         df_tension,
                         df_compression,
                         df_burst,
@@ -131,7 +133,7 @@ def add_pwploads_app():
 
     if specs:
         v_avg = st.number_input('Average running speed, m/s:', value=0.3, step=0.1)
-        e = st.number_input("Young's modulus, bar:", value=32e6, step=1e6)
+        e = st.number_input("Young's modulus, psi x10^6:", value=464, step=1)
         fric = st.number_input('Sliding friction factor:', value=0.24, step=0.01)
         a = st.number_input('Ratio max speed / avg speed:', value=1.5, step=0.1)
 
@@ -143,6 +145,7 @@ def add_pwploads_app():
         if trajectory is not None:
 
             casing.add_trajectory(trajectory)
+            e *= 1e6/14.504
 
             casing.overpull(tvd_fluid=tvd_list, rho_fluid=rho_list, v_avg=v_avg, e=e, fric=fric, a=a, f_ov=f_ov)
             casing.running(tvd_fluid=tvd_list, rho_fluid=rho_list, v_avg=v_avg, e=e, fric=fric, a=a)
