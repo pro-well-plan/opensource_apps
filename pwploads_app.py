@@ -1,4 +1,7 @@
 import streamlit as st
+import pandas as pd
+import well_profile as wp
+import pwploads as pld
 
 
 def add_pwploads_app():
@@ -17,5 +20,140 @@ def add_pwploads_app():
     st.markdown('[python package]'
                 '(https://pypi.org/project/pwploads/)')
 
+    st.markdown('[documentation]'
+                '(https://pwploads.readthedocs.io/en/latest/)')
+
     st.markdown('[About our Open Source initiative]'
-                '(https://prowellplan.com/modern-drilling-organization/open-source-boosting-the-digital-transformation)')
+                '(https://prowellplan.com/modern-drilling-organization/'
+                'open-source-boosting-the-digital-transformation)')
+
+    st.markdown('#### 1. Load the wellbore trajectory')
+
+    file_type = st.selectbox("File format",
+                             ['excel', 'csv'],
+                             key='file_type')
+
+    trajectory = None
+
+    uploaded_file = st.file_uploader('Load well trajectory: ', type=["xlsx", "csv"])
+
+    if uploaded_file:
+        if file_type == 'excel':
+            df = pd.read_excel(uploaded_file)
+        else:
+            df = pd.read_csv(uploaded_file)
+
+        trajectory = wp.load(df, units='metric')
+
+    st.markdown('#### 2. Create a casing with the specifications you need')
+
+    # Default Values
+    od_pipe = 8.0
+    id_pipe = 7.2
+    length_pipe = 1500
+    nominal_weight = 100
+    yield_s = 80000
+    df_vme = 1.25
+    df_burst = 1.1
+    df_collapse = 1.1
+    df_tension = 1.3
+    df_compression = 1.3
+    p_test = 4000
+    f_ov = 0
+    specs = False
+    f_ov_status = False
+    p_test_status = False
+    v_avg = 0.3
+    e = 32e6
+    fric = 0.24
+    a = 1.5
+    cement = False
+    rho_cem = 1.8
+
+    if st.checkbox('Set Casing Dimensions'):
+        od_pipe = st.number_input('OD, [in]:', value=8.0, step=0.1)
+        id_pipe = st.number_input('ID, [in]:', value=7.2, step=0.1)
+        length_pipe = st.number_input('Pipe length, [m]:', value=1500, min_value=10, step=100)
+
+    if st.checkbox('Set Material Properties'):
+        nominal_weight = st.number_input('Nominal weight, [kg/m]:', value=100, step=1)
+        yield_s = st.number_input('Yield strength, [psi]:', value=80000, step=10000)
+
+    if st.checkbox('Set Design Factors'):
+        df_vme = st.number_input('Von Mises:', value=1.25, step=0.1)
+        df_burst = st.number_input('API - Burst:', value=1.1, step=0.1)
+        df_collapse = st.number_input('API - Collapse:', value=1.1, step=0.1)
+        df_tension = st.number_input('API - Tension:', value=1.3, step=0.1)
+        df_compression = st.number_input('API - Compression:', value=1.3, step=0.1)
+
+    casing = pld.Casing(od_pipe, id_pipe, length_pipe,
+                        nominal_weight,
+                        yield_s,
+                        df_tension,
+                        df_compression,
+                        df_burst,
+                        df_collapse,
+                        df_vme)
+
+    st.markdown('#### 3. Set fluid')
+    fluids_no = st.number_input('Number of fluids:', step=1, value=1)
+
+    delta_tvd = float(length_pipe / fluids_no)
+
+    rho_list = []
+    tvd_list = []
+    for x in range(fluids_no):
+        st.write(' - fluid ' + str(x+1))
+        rho_f = st.number_input('Fluid density, sg:', value=1.2, step=0.1, key='fluid' + str(x))
+        rho_list.append(rho_f)
+        tvd_f = st.number_input('Final Depth, m:', value=float(delta_tvd*(x+1)), step=100.0, key='tvd' + str(x))
+        tvd_list.append(tvd_f)
+    tvd_list = tvd_list[:-1]
+
+    st.markdown('#### 4. Modify parameters for load cases')
+
+    if st.checkbox('Running in hole'):
+        specs = True
+
+    if st.checkbox('Overpull'):
+        f_ov_status = True
+        specs = True
+
+    if st.checkbox('Green Cement Pressure Test'):
+        p_test_status = True
+        cement = True
+
+    if p_test_status:
+        p_test = st.number_input('Testing pressure, psi:', value=4000, step=100)
+
+    if f_ov_status:
+        f_ov = st.number_input('Overpull force, kN:', value=0, step=10)
+
+    if specs:
+        v_avg = st.number_input('Average running speed, m/s:', value=0.3, step=0.1)
+        e = st.number_input("Young's modulus, bar:", value=32e6, step=1e6)
+        fric = st.number_input('Sliding friction factor:', value=0.24, step=0.01)
+        a = st.number_input('Ratio max speed / avg speed:', value=1.5, step=0.1)
+
+    if cement:
+        rho_cem = st.number_input('Cement density, sg:', value=1.8, step=0.1)
+
+    if st.button('Generate plot'):
+
+        if trajectory is not None:
+
+            casing.add_trajectory(trajectory)
+
+            casing.overpull(tvd_fluid=tvd_list, rho_fluid=rho_list, v_avg=v_avg, e=e, fric=fric, a=a, f_ov=f_ov)
+            casing.running(tvd_fluid=tvd_list, rho_fluid=rho_list, v_avg=v_avg, e=e, fric=fric, a=a)
+            casing.green_cement(tvd_fluid_int=tvd_list, rho_fluid_int=rho_list,
+                                rho_cement=rho_cem, p_test=p_test)
+
+            fig = casing.plot()
+
+            st.plotly_chart(fig)
+
+        else:
+            st.warning('No trajectory loaded')
+
+    st.write('More features will be added soon...')

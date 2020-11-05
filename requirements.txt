@@ -5,3 +5,4 @@ torque_drag
 streamlit
 pandas
 xlrd
+pwploads==0.1.3b1

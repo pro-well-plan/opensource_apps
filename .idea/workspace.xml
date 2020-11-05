@@ -21,15 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="763af28b-90b0-4373-a20d-87468b9dac24" name="Default Changelist" comment="adding app to visualize .las files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/petrodc_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/petrodc_app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pwploads_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/pwploads_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pwptemp_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/pwptemp_app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/side_bar.py" beforeDir="false" afterPath="$PROJECT_DIR$/side_bar.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/torque_drag_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/torque_drag_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/well_logs_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/well_logs_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/well_profile_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/well_profile_app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,6 +143,8 @@
       <workItem from="1601384461466" duration="3033000" />
       <workItem from="1603438798160" duration="26327000" />
       <workItem from="1603650132770" duration="3010000" />
+      <workItem from="1603876069623" duration="173000" />
+      <workItem from="1604496786772" duration="10636000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1599552695219</created>
