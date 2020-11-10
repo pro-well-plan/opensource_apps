@@ -36,9 +36,6 @@ def main():
     if selection == 'Torque & Drag':
         add_torque_drag_app()
 
-    if selection in ['Temperature Distribution', 'Load Cases']:
-        under_construction()
-
     if selection == 'Visualize Well Logs':
         add_well_logs_app()
 
