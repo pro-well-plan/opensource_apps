@@ -11,7 +11,7 @@ from footer import add_footer
 
 
 def main():
-    st.beta_set_page_config(
+    st.set_page_config(
         page_title="PWP - Open Source",
         page_icon='https://user-images.githubusercontent.com/52009346/93438445-9c26e400-f8cd-11ea-9183-b6df80ddd318.png'
     )
@@ -35,9 +35,6 @@ def main():
 
     if selection == 'Torque & Drag':
         add_torque_drag_app()
-
-    if selection in ['Temperature Distribution', 'Load Cases']:
-        under_construction()
 
     if selection == 'Visualize Well Logs':
         add_well_logs_app()
