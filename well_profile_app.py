@@ -166,17 +166,18 @@ def add_well_profile_app():
                     link = f'<a href="data:file/csv;base64,{b64}" download="wellpath.csv">Download dataset</a>'
                     st.markdown(link, unsafe_allow_html=True)
 
+        dark = st.checkbox("Activate Dark Mode", value=False)
+
         if st.button('Generate 3D plot'):
 
             if len(wellbores_data) == 0:
                 st.warning('No data loaded')
             else:
-                fig = wellbores_data[0].plot(add_well=wellbores_data[1:], names=wellbores_names)
+                fig = wellbores_data[0].plot(add_well=wellbores_data[1:], names=wellbores_names, dark_mode=dark)
                 st.plotly_chart(fig)
 
 
 def data_and_plot(trajectory):
-    fig = trajectory.plot()
 
     if st.checkbox("Show values", value=False):
         st.dataframe(trajectory.df())
@@ -184,6 +185,9 @@ def data_and_plot(trajectory):
         b64 = base64.b64encode(csv.encode()).decode()  # some strings
         link = f'<a href="data:file/csv;base64,{b64}" download="wellpath.csv">Download dataset</a>'
         st.markdown(link, unsafe_allow_html=True)
+
+    dark = st.checkbox("Activate Dark Mode", value=False)
+    fig = trajectory.plot(dark_mode=dark)
 
     if st.button("Generate 3D plot"):
         st.plotly_chart(fig)
