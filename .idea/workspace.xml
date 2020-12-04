@@ -19,10 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="763af28b-90b0-4373-a20d-87468b9dac24" name="Default Changelist" comment="removing under construction - sign">
+    <list default="true" id="763af28b-90b0-4373-a20d-87468b9dac24" name="Default Changelist" comment="updating requirements.txt. Adding dark mode for well_profile app">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwploads_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/pwploads_app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/well_profile_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/well_profile_app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +146,9 @@
       <workItem from="1603876069623" duration="173000" />
       <workItem from="1604496786772" duration="14998000" />
       <workItem from="1604994669507" duration="397000" />
-      <workItem from="1606299356564" duration="1601000" />
+      <workItem from="1606299356564" duration="2011000" />
+      <workItem from="1607078084103" duration="17000" />
+      <workItem from="1607092495493" duration="950000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1599552695219</created>
@@ -323,7 +325,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604994791494</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="updating requirements.txt. Adding dark mode for well_profile app">
+      <created>1606302833641</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1606302833641</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,7 +375,8 @@
     <MESSAGE value="adding steel grade" />
     <MESSAGE value="update requirements.txt (pwploads)" />
     <MESSAGE value="removing under construction - sign" />
-    <option name="LAST_COMMIT_MESSAGE" value="removing under construction - sign" />
+    <MESSAGE value="updating requirements.txt. Adding dark mode for well_profile app" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating requirements.txt. Adding dark mode for well_profile app" />
   </component>
   <component name="WindowStateProjectService">
     <state x="444" y="259" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599731180570">
@@ -405,10 +415,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1600426949388" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1604994793772">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1606302835122">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1604994793772" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1606302835122" />
     <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599660722634">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

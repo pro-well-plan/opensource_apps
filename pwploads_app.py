@@ -69,6 +69,10 @@ def add_pwploads_app():
     a = 1.5
     cement = False
     rho_cem = 1.8
+    conn_compression = 0.6
+    conn_tension = 0.6
+    df_conn_compression = 1.0
+    df_conn_tension = 1.0
 
     if st.checkbox('Set Casing Dimensions'):
         od_pipe = st.number_input('OD, [in]:', value=8.0, step=0.1)
@@ -80,6 +84,10 @@ def add_pwploads_app():
         grade = st.selectbox("Steel grade:",
                              ['H-40', 'J-55', 'K-55', 'M-65', 'N-80', 'L-80', 'C-90', 'R-95', 'T-95',
                               'C-110', 'P-110', 'Q-125'], index=5)
+        conn_compression = st.number_input('Connection compression strength, [%]:', value=60, step=1, min_value=0,
+                                           max_value=100) / 100
+        conn_tension = st.number_input('Connection tension strength, [%]:', value=60, step=1, min_value=0,
+                                       max_value=100) / 100
 
     if st.checkbox('Set Design Factors'):
         df_vme = st.number_input('Von Mises:', value=1.25, step=0.1)
@@ -87,6 +95,8 @@ def add_pwploads_app():
         df_collapse = st.number_input('API - Collapse:', value=1.1, step=0.1)
         df_tension = st.number_input('API - Tension:', value=1.3, step=0.1)
         df_compression = st.number_input('API - Compression:', value=1.3, step=0.1)
+        df_conn_compression = st.number_input('Connection - Compression:', value=1.0, step=0.1)
+        df_conn_tension = st.number_input('Connection - Tension:', value=1.0, step=0.1)
 
     casing = pld.Casing(od_pipe, id_pipe, length_pipe,
                         nominal_weight,
@@ -95,7 +105,11 @@ def add_pwploads_app():
                         df_compression,
                         df_burst,
                         df_collapse,
-                        df_vme)
+                        df_vme,
+                        conn_compression,
+                        conn_tension,
+                        df_conn_compression,
+                        df_conn_tension)
 
     st.markdown('#### 3. Set fluid')
     fluids_no = st.number_input('Number of fluids:', step=1, value=1)
