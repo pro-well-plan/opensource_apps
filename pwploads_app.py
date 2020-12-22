@@ -69,6 +69,12 @@ def add_pwploads_app():
     a = 1.5
     cement = False
     rho_cem = 1.8
+    displ_fluid = 1.3
+    f_pre = 0.0
+    p_res = 5800
+    tvd_res = 2000
+    rho_gas = 0.5
+    rho_mud = 1.4
     conn_compression = 0.6
     conn_tension = 0.6
     df_conn_compression = 1.0
@@ -139,6 +145,17 @@ def add_pwploads_app():
         p_test_status = True
         cement = True
 
+    if st.checkbox('Cementing'):
+        cement = True
+        displ_fluid = st.number_input('Displacement fluid density, sg:', value=1.3, step=0.1)
+        f_pre = st.number_input('Pre-loading force, kN:', value=0, step=10)
+
+    if st.checkbox('Displacement to Gas'):
+        p_res = st.number_input('Reservoir Pressure, psi:', value=5800, step=100)
+        tvd_res = st.number_input('Reservoir Depth (tvd), m:', value=2000, step=100)
+        rho_gas = st.number_input('Gas density, sg:', value=0.5, step=0.1)
+        rho_mud = st.number_input('Mud density, sg:', value=1.4, step=0.1)
+
     if p_test_status:
         p_test = st.number_input('Testing pressure, psi:', value=4000, step=100)
 
@@ -165,6 +182,8 @@ def add_pwploads_app():
             casing.running(tvd_fluid=tvd_list, rho_fluid=rho_list, v_avg=v_avg, e=e, fric=fric, a=a)
             casing.green_cement(tvd_fluid_int=tvd_list, rho_fluid_int=rho_list,
                                 rho_cement=rho_cem, p_test=p_test)
+            casing.cementing(rho_cement=rho_cem, rho_fluid=displ_fluid, e=e, f_pre=f_pre)
+            casing.displacement_gas(p_res=p_res, tvd_res=tvd_res, rho_gas=rho_gas, rho_mud=rho_mud, e=e)
 
             fig = casing.plot()
 
