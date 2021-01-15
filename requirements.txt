@@ -4,5 +4,5 @@ pwptemp==0.3.0a
 torque_drag
 streamlit
 pandas
-xlrd
+xlrd==1.2.0
 pwploads==0.2.3

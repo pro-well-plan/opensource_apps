@@ -19,9 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="763af28b-90b0-4373-a20d-87468b9dac24" name="Default Changelist" comment="updating requirements.txt.">
+    <list default="true" id="763af28b-90b0-4373-a20d-87468b9dac24" name="Default Changelist" comment="adding parameters for new load cases">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pwploads_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/pwploads_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +150,8 @@
       <workItem from="1607092495493" duration="1190000" />
       <workItem from="1607420691186" duration="174000" />
       <workItem from="1607422843975" duration="1976000" />
-      <workItem from="1608635689301" duration="3127000" />
+      <workItem from="1608635689301" duration="3562000" />
+      <workItem from="1610727433105" duration="1064000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1599552695219</created>
@@ -355,7 +356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608636449543</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="adding parameters for new load cases">
+      <created>1608640692173</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1608640692174</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,7 +382,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Including NPD data (petrodc app)" />
     <MESSAGE value="Including Athabasca well logs (petrodc app)" />
     <MESSAGE value="Adding info pwptemp, pwploads, torque_drag" />
     <MESSAGE value="Setting versions" />
@@ -399,7 +406,8 @@
     <MESSAGE value="updating requirements.txt. Adding dark mode for well_profile app" />
     <MESSAGE value="updating requirements.txt. Adding connection load limits." />
     <MESSAGE value="updating requirements.txt." />
-    <option name="LAST_COMMIT_MESSAGE" value="updating requirements.txt." />
+    <MESSAGE value="adding parameters for new load cases" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding parameters for new load cases" />
   </component>
   <component name="WindowStateProjectService">
     <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1607437278895">
@@ -426,10 +434,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1600426949388" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1608636462278">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1608640693663">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1608636462278" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1608640693663" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/opensource_apps$app.coverage" NAME="app Coverage Results" MODIFIED="1603369302367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
