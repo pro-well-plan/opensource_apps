@@ -1,8 +1,8 @@
-well_profile==0.2.9
+well_profile==0.4.0
 petrodc==0.1.9
 pwptemp==0.3.0a
 torque_drag
 streamlit
 pandas
-xlrd
-pwploads==0.1.3
+xlrd==1.2.0
+pwploads==0.2.3

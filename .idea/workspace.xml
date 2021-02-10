@@ -19,8 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="763af28b-90b0-4373-a20d-87468b9dac24" name="Default Changelist" comment="update requirements.txt (pwploads)">
+    <list default="true" id="763af28b-90b0-4373-a20d-87468b9dac24" name="Default Changelist" comment="Update resources">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/pwp-bgd.gif" beforeDir="false" afterPath="$PROJECT_DIR$/resources/pwp-bgd.gif" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,12 +51,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources" />
       <recent name="$APPLICATION_CONFIG_DIR$/scratches" />
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -143,6 +146,16 @@
       <workItem from="1603650132770" duration="3010000" />
       <workItem from="1603876069623" duration="173000" />
       <workItem from="1604496786772" duration="14998000" />
+      <workItem from="1604994669507" duration="397000" />
+      <workItem from="1606299356564" duration="2011000" />
+      <workItem from="1607078084103" duration="17000" />
+      <workItem from="1607092495493" duration="1190000" />
+      <workItem from="1607420691186" duration="174000" />
+      <workItem from="1607422843975" duration="1976000" />
+      <workItem from="1608635689301" duration="3562000" />
+      <workItem from="1610727433105" duration="1556000" />
+      <workItem from="1612531379531" duration="841000" />
+      <workItem from="1612862493358" duration="305000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1599552695219</created>
@@ -312,7 +325,63 @@
       <option name="project" value="LOCAL" />
       <updated>1604935122871</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="removing under construction - sign">
+      <created>1604994791494</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1604994791494</updated>
+    </task>
+    <task id="LOCAL-00026" summary="updating requirements.txt. Adding dark mode for well_profile app">
+      <created>1606302833641</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1606302833641</updated>
+    </task>
+    <task id="LOCAL-00027" summary="updating requirements.txt. Adding connection load limits.">
+      <created>1607095505242</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1607095505242</updated>
+    </task>
+    <task id="LOCAL-00028" summary="updating requirements.txt.">
+      <created>1607423513195</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1607423513195</updated>
+    </task>
+    <task id="LOCAL-00029" summary="updating requirements.txt.">
+      <created>1608636449543</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1608636449543</updated>
+    </task>
+    <task id="LOCAL-00030" summary="adding parameters for new load cases">
+      <created>1608640692173</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1608640692174</updated>
+    </task>
+    <task id="LOCAL-00031" summary="set version of xlrd that allows .xlsx files">
+      <created>1610728752491</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1610728752491</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Update resources">
+      <created>1612966777176</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1612966777176</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,11 +400,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial commit" />
-    <MESSAGE value="Including topo-bathymetry data (petrodc app)" />
-    <MESSAGE value="Including NPD data (petrodc app)" />
-    <MESSAGE value="Including Athabasca well logs (petrodc app)" />
-    <MESSAGE value="Adding info pwptemp, pwploads, torque_drag" />
     <MESSAGE value="Setting versions" />
     <MESSAGE value="fix typo" />
     <MESSAGE value="Including Torque and Drag app" />
@@ -354,61 +418,13 @@
     <MESSAGE value="update code: from st.beta_set_page_config to st.set_page_config" />
     <MESSAGE value="adding steel grade" />
     <MESSAGE value="update requirements.txt (pwploads)" />
-    <option name="LAST_COMMIT_MESSAGE" value="update requirements.txt (pwploads)" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="444" y="259" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599731180570">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="444" y="259" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1599731180570" />
-    <state x="144" y="79" key="DiffContextDialog" timestamp="1599743235962">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="144" y="79" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1599743235962" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1603649877900">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1603649877900" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.23.1440.803@0.23.1440.803" timestamp="1603391464150" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1603649877895">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1603649877895" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.23.1440.803@0.23.1440.803" timestamp="1603391464148" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1603649877894">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1603649877894" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.23.1440.803@0.23.1440.803" timestamp="1603391464147" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1603649877899">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1603649877899" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.803@0.23.1440.803" timestamp="1603391464149" />
-    <state x="221" y="89" key="SettingsEditor" timestamp="1599747469325">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1599747469325" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1600426949388">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1600426949388" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1604935123976">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1604935123976" />
-    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599660722634">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1599660722634" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1599733576795">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1599733576795" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/opensource_apps$app.coverage" NAME="app Coverage Results" MODIFIED="1603369302367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/opensource_apps$pwptemp_testing.coverage" NAME="pwptemp_testing Coverage Results" MODIFIED="1600329244750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
-    <SUITE FILE_PATH="coverage/opensource_apps$well_profile_testing.coverage" NAME="well_profile_testing Coverage Results" MODIFIED="1603446251567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
+    <MESSAGE value="removing under construction - sign" />
+    <MESSAGE value="updating requirements.txt. Adding dark mode for well_profile app" />
+    <MESSAGE value="updating requirements.txt. Adding connection load limits." />
+    <MESSAGE value="updating requirements.txt." />
+    <MESSAGE value="adding parameters for new load cases" />
+    <MESSAGE value="set version of xlrd that allows .xlsx files" />
+    <MESSAGE value="Update resources" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update resources" />
   </component>
 </project>
