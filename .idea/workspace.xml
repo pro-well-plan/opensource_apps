@@ -19,10 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="763af28b-90b0-4373-a20d-87468b9dac24" name="Default Changelist" comment="add cover">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/well_profile_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/well_profile_app.py" afterDir="false" />
+    <list default="true" id="763af28b-90b0-4373-a20d-87468b9dac24" name="Default Changelist" comment="adding well profile feature: color by parameter">
+      <change beforePath="$PROJECT_DIR$/pwptemp_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/pwptemp_app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -396,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613147924156</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="adding well profile feature: color by parameter">
+      <created>1613468305639</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1613468305639</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -415,7 +420,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix typo" />
     <MESSAGE value="Including Torque and Drag app" />
     <MESSAGE value="rearrange code" />
     <MESSAGE value="update requirements" />
@@ -440,6 +444,7 @@
     <MESSAGE value="set version of xlrd that allows .xlsx files" />
     <MESSAGE value="Update resources" />
     <MESSAGE value="add cover" />
-    <option name="LAST_COMMIT_MESSAGE" value="add cover" />
+    <MESSAGE value="adding well profile feature: color by parameter" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding well profile feature: color by parameter" />
   </component>
 </project>

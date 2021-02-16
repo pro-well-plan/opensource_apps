@@ -103,6 +103,11 @@ def load_trajectory():
 
         trajectory = wp.load(df)
 
+        trajectory.md = [point['md'] for point in trajectory.trajectory]
+        trajectory.tvd = [point['tvd'] for point in trajectory.trajectory]
+        trajectory.inclination = [point['inc'] for point in trajectory.trajectory]
+        trajectory.azimuth = [point['azi'] for point in trajectory.trajectory]
+
     return trajectory
 
 
