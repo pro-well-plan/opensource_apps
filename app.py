@@ -16,7 +16,7 @@ def main():
         page_icon='https://user-images.githubusercontent.com/52009346/93438445-9c26e400-f8cd-11ea-9183-b6df80ddd318.png'
     )
 
-    st.image('https://user-images.githubusercontent.com/52009346/69100304-2eb3e800-0a5d-11ea-9a3a-8e502af2120b.png',
+    st.image('https://github.com/pro-well-plan/opensource_apps/raw/master/resources/pwp-bgd.gif',
              use_column_width=True)
 
     selection = main_selection()

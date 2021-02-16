@@ -38,6 +38,11 @@ def add_torque_drag_app():
 
         trajectory = wp.load(df, units='metric')
 
+        trajectory.md = [point['md'] for point in trajectory.trajectory]
+        trajectory.tvd = [point['tvd'] for point in trajectory.trajectory]
+        trajectory.inclination = [point['inc'] for point in trajectory.trajectory]
+        trajectory.azimuth = [point['azi'] for point in trajectory.trajectory]
+
     # Set default parameters
     od_pipe = 4.5
     id_pipe = 4.0
@@ -68,23 +73,21 @@ def add_torque_drag_app():
     plot_dg = st.checkbox('Drag force', value=True)
     plot_tq = st.checkbox('Torque')
 
-    if st.button('Generate plot'):
+    if trajectory is not None:
 
-        if trajectory is not None:
+        dimensions = {'od_pipe': od_pipe, 'id_pipe': id_pipe, 'length_pipe': length_pipe, 'od_annular': od_annular}
 
-            dimensions = {'od_pipe': od_pipe, 'id_pipe': id_pipe, 'length_pipe': length_pipe, 'od_annular': od_annular}
+        densities = {'rhof': rhof, 'rhod': rhod}
 
-            densities = {'rhof': rhof, 'rhod': rhod}
+        result = td.calc(trajectory, dimensions, densities, case='all', torque_calc=True, wob=wob, tbit=tbit)
 
-            result = td.calc(trajectory, dimensions, densities, case='all', torque_calc=True, wob=wob, tbit=tbit)
+        if plot_dg:
+            fig = result.plot()
+            st.plotly_chart(fig)
 
-            if plot_dg:
-                fig = result.plot()
-                st.plotly_chart(fig)
+        if plot_tq:
+            fig = result.plot(plot_case='Torque')
+            st.plotly_chart(fig)
 
-            if plot_tq:
-                fig = result.plot(plot_case='Torque')
-                st.plotly_chart(fig)
-
-        else:
-            st.warning('No data loaded')
+    else:
+        st.warning('No data loaded')
