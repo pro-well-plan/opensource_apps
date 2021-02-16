@@ -48,7 +48,7 @@ def add_well_profile_app():
         if profile == 'Vertical':
             profile = 'V'
             param_dict = set_parameters(profile, length_units)
-            traj = wp.get(param_dict['mdt'], cells_no=param_dict['cells_no'], units=units,
+            traj = wp.get(param_dict['mdt'], points=param_dict['cells_no'], units=units,
                           set_start=param_dict['start'])
 
             data_and_plot(traj)
@@ -58,7 +58,7 @@ def add_well_profile_app():
             profile = 'J'
             param_dict = set_parameters(profile, length_units)
             traj = wp.get(param_dict['mdt'],
-                          cells_no=param_dict['cells_no'],
+                          points=param_dict['cells_no'],
                           profile=profile,
                           build_angle=param_dict['build_angle'],
                           kop=param_dict['kop'],
@@ -73,7 +73,7 @@ def add_well_profile_app():
             profile = 'S'
             param_dict = set_parameters(profile, length_units)
             traj = wp.get(param_dict['mdt'],
-                          cells_no=param_dict['cells_no'],
+                          points=param_dict['cells_no'],
                           profile=profile,
                           build_angle=param_dict['build_angle'],
                           kop=param_dict['kop'],
@@ -90,7 +90,7 @@ def add_well_profile_app():
             profile = 'H1'
             param_dict = set_parameters(profile, length_units)
             traj = wp.get(param_dict['mdt'],
-                          cells_no=param_dict['cells_no'],
+                          points=param_dict['cells_no'],
                           profile=profile,
                           kop=param_dict['kop'],
                           eob=param_dict['eob'],
@@ -105,7 +105,7 @@ def add_well_profile_app():
             param_dict = set_parameters(profile, length_units)
 
             traj = wp.get(param_dict['mdt'],
-                          cells_no=param_dict['cells_no'],
+                          points=param_dict['cells_no'],
                           profile=profile,
                           build_angle=param_dict['build_angle'],
                           kop=param_dict['kop'],
@@ -167,14 +167,37 @@ def add_well_profile_app():
                     st.markdown(link, unsafe_allow_html=True)
 
         dark = st.checkbox("Activate Dark Mode", value=False)
+        style = {'darkMode': dark}
 
-        if st.button('Generate 3D plot'):
+        if len(wellbores_data) == 1:
+            color = st.selectbox('Color by:',
+                                 ('None',
+                                  'Dogleg Severity (dls)',
+                                  'Dogleg (dl)',
+                                  'Inclination (inc)',
+                                  'Azimuth (azi)',
+                                  'Measured Depth (md)',
+                                  'True Vertical Depth (tvd)'))
 
-            if len(wellbores_data) == 0:
-                st.warning('No data loaded')
-            else:
-                fig = wellbores_data[0].plot(add_well=wellbores_data[1:], names=wellbores_names, dark_mode=dark)
-                st.plotly_chart(fig)
+            color_data = {'None': None,
+                          'Dogleg Severity (dls)': 'dls',
+                          'Dogleg (dl)': 'dl',
+                          'Inclination (inc)': 'inc',
+                          'Azimuth (azi)': 'azi',
+                          'Measured Depth (md)': 'md',
+                          'True Vertical Depth (tvd)': 'tvd'}
+
+            style['color'] = color_data[color]
+
+            style['size'] = 2
+            if color_data[color] is not None:
+                style['size'] = st.slider('Marker size:', min_value=1, max_value=8, value=2, step=1)
+
+        if len(wellbores_data) == 0:
+            st.warning('No data loaded')
+        else:
+            fig = wellbores_data[0].plot(add_well=wellbores_data[1:], names=wellbores_names, style=style)
+            st.plotly_chart(fig)
 
 
 def data_and_plot(trajectory):
@@ -187,10 +210,33 @@ def data_and_plot(trajectory):
         st.markdown(link, unsafe_allow_html=True)
 
     dark = st.checkbox("Activate Dark Mode", value=False)
-    fig = trajectory.plot(dark_mode=dark)
 
-    if st.button("Generate 3D plot"):
-        st.plotly_chart(fig)
+    color = st.selectbox('Color by:',
+                         ('None',
+                          'Dogleg Severity (dls)',
+                          'Dogleg (dl)',
+                          'Inclination (inc)',
+                          'Azimuth (azi)',
+                          'Measured Depth (md)',
+                          'True Vertical Depth (tvd)'))
+
+    color_data = {'None': None,
+                  'Dogleg Severity (dls)': 'dls',
+                  'Dogleg (dl)': 'dl',
+                  'Inclination (inc)': 'inc',
+                  'Azimuth (azi)': 'azi',
+                  'Measured Depth (md)': 'md',
+                  'True Vertical Depth (tvd)': 'tvd'}
+
+    marker_size = 2
+    if color_data[color] is not None:
+        marker_size = st.slider('Marker size:', min_value=1, max_value=8, value=2, step=1)
+
+    style = {'darkMode': dark, 'color': color_data[color], 'size': marker_size}
+
+    fig = trajectory.plot(style=style)
+
+    st.plotly_chart(fig)
 
 
 def set_parameters(profile, length_units):
