@@ -24,7 +24,7 @@ def add_well_profile_app():
 
     building_preference = st.selectbox(
             'Select the way to start:',
-            ('Load existing trajectory', 'Create a new trajectory')
+            ('Load existing trajectory', 'Create shape-based trajectory', 'Create trajectory from 2 points')
         )
 
     units = st.selectbox(
@@ -37,7 +37,30 @@ def add_well_profile_app():
     else:
         length_units = 'ft'
 
-    if building_preference == 'Create a new trajectory':
+    if building_preference == 'Create trajectory from 2 points':
+        st.markdown('### Set kick-off point:')
+        c1, c2, c3 = st.beta_columns(3)
+        with c1:
+            kop_north = st.number_input("north", value=0, step=10)
+        with c2:
+            kop_east = st.number_input("east", value=0, step=10)
+        with c3:
+            kop_depth = st.number_input("tvd", value=100, step=10)
+
+        st.markdown('### Set target point:')
+        c1, c2, c3 = st.beta_columns(3)
+        with c1:
+            target_north = st.number_input("north", value=500, step=10)
+        with c2:
+            target_east = st.number_input("east", value=800, step=10)
+        with c3:
+            target_depth = st.number_input("tvd", value=800, step=10)
+        traj = wp.two_points({'kickoff': {'north': kop_north, 'east': kop_east, 'tvd': kop_depth},
+                              'target': {'north': target_north, 'east': target_east, 'tvd': target_depth}})
+
+        data_and_plot(traj)
+
+    if building_preference == 'Create shape-based trajectory':
 
         profile = st.selectbox(
             'Select a well profile type',
@@ -48,7 +71,7 @@ def add_well_profile_app():
         if profile == 'Vertical':
             profile = 'V'
             param_dict = set_parameters(profile, length_units)
-            traj = wp.get(param_dict['mdt'], points=param_dict['cells_no'], units=units,
+            traj = wp.get(param_dict['mdt'], points=param_dict['cells_no'], set_info={'units': units},
                           set_start=param_dict['start'])
 
             data_and_plot(traj)
@@ -63,7 +86,7 @@ def add_well_profile_app():
                           build_angle=param_dict['build_angle'],
                           kop=param_dict['kop'],
                           eob=param_dict['eob'],
-                          units=units,
+                          set_info={'units': units},
                           set_start=param_dict['start'])
 
             data_and_plot(traj)
@@ -80,7 +103,7 @@ def add_well_profile_app():
                           eob=param_dict['eob'],
                           sod=param_dict['sod'],
                           eod=param_dict['eod'],
-                          units=units,
+                          set_info={'units': units},
                           set_start=param_dict['start'])
 
             data_and_plot(traj)
@@ -94,7 +117,7 @@ def add_well_profile_app():
                           profile=profile,
                           kop=param_dict['kop'],
                           eob=param_dict['eob'],
-                          units=units,
+                          set_info={'units': units},
                           set_start=param_dict['start'])
 
             data_and_plot(traj)
@@ -112,7 +135,7 @@ def add_well_profile_app():
                           eob=param_dict['eob'],
                           kop2=param_dict['kop2'],
                           eob2=param_dict['eob2'],
-                          units=units,
+                          set_info={'units': units},
                           set_start=param_dict['start'])
 
             data_and_plot(traj)
@@ -134,10 +157,13 @@ def add_well_profile_app():
             start = {'north': 0, 'east': 0}
 
             if st.checkbox('Set coordinates of initial point:', key='set_start' + str(x)):
-                start_north = st.number_input("Initial point, North, " + length_units, value=0, step=1,
-                                              key='initial_north' + str(x))
-                start_east = st.number_input("Initial point, East, " + length_units, value=0, step=1,
-                                             key='initial_east' + str(x))
+                c1, c2 = st.beta_columns(2)
+                with c1:
+                    start_north = st.number_input("north, " + length_units, value=0, step=10,
+                                                  key='initial_north' + str(x))
+                with c2:
+                    start_east = st.number_input("east, " + length_units, value=0, step=10,
+                                                 key='initial_east' + str(x))
                 start = {'north': start_north, 'east': start_east}
 
             file_type = st.selectbox("File format",
@@ -152,7 +178,7 @@ def add_well_profile_app():
                 else:
                     df = pd.read_csv(uploaded_file)
 
-                trajectory = wp.load(df, units=units, set_start=start)
+                trajectory = wp.load(df, set_info={'units': units}, set_start=start)
                 wellbores_data.append(trajectory)
                 wellbores_names.append(well_name)
 
@@ -202,23 +228,33 @@ def add_well_profile_app():
 
 def data_and_plot(trajectory):
 
-    if st.checkbox("Show values", value=False):
+    st.write('-----------------')
+
+    c1, c2, c3 = st.beta_columns(3)
+    show_data = False
+    with c1:
+        st.write('##')
+        if st.checkbox("Show values", value=False):
+            show_data = True
+    with c2:
+        st.write('##')
+        dark = st.checkbox("Activate Dark Mode", value=False)
+    with c3:
+        color = st.selectbox('Color by:',
+                             ('None',
+                              'Dogleg Severity (dls)',
+                              'Dogleg (dl)',
+                              'Inclination (inc)',
+                              'Azimuth (azi)',
+                              'Measured Depth (md)',
+                              'True Vertical Depth (tvd)'))
+
+    if show_data:
         st.dataframe(trajectory.df())
         csv = trajectory.df().to_csv(index=False)
         b64 = base64.b64encode(csv.encode()).decode()  # some strings
         link = f'<a href="data:file/csv;base64,{b64}" download="wellpath.csv">Download dataset</a>'
         st.markdown(link, unsafe_allow_html=True)
-
-    dark = st.checkbox("Activate Dark Mode", value=False)
-
-    color = st.selectbox('Color by:',
-                         ('None',
-                          'Dogleg Severity (dls)',
-                          'Dogleg (dl)',
-                          'Inclination (inc)',
-                          'Azimuth (azi)',
-                          'Measured Depth (md)',
-                          'True Vertical Depth (tvd)'))
 
     color_data = {'None': None,
                   'Dogleg Severity (dls)': 'dls',
@@ -240,11 +276,21 @@ def data_and_plot(trajectory):
 
 
 def set_parameters(profile, length_units):
-    mdt = st.number_input("Final depth, " + length_units, value=3000, step=100)
-    cells_no = st.number_input("Number of cells", value=100, step=1)
-    start_north = st.number_input("Initial point, North, " + length_units, value=0, step=1)
-    start_east = st.number_input("Initial point, East, " + length_units, value=0, step=1)
-    start_depth = st.number_input("Initial point, Depth, " + length_units, value=0, step=1)
+    c1, c2 = st.beta_columns(2)
+    with c1:
+        mdt = st.number_input("Final depth, " + length_units, value=3000, step=100)
+    with c2:
+        cells_no = st.number_input("Number of cells", value=100, step=1)
+
+    st.write('Surface location')
+    c1, c2, c3 = st.beta_columns(3)
+    with c1:
+        start_north = st.number_input("north, " + length_units, value=0, step=10)
+    with c2:
+        start_east = st.number_input("east, " + length_units, value=0, step=10)
+    with c3:
+        start_depth = st.number_input("tvd, " + length_units, value=0, step=10)
+
     start = {'north': start_north, 'east': start_east, 'depth': start_depth}
     result = {'mdt': mdt, 'cells_no': cells_no, 'start': start}
     s_build_angle, s_kop2, s_eob2, s_sod, s_eod = False, False, False, False, False

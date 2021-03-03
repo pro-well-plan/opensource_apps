@@ -1,7 +1,7 @@
-well_profile==0.5.0b1
+well_profile==0.5.1
 petrodc==0.1.9
 pwptemp==0.3.0a
-torque_drag
+torque_drag==0.0.8
 streamlit
 pandas==1.2.2
 openpyxl==3.0.6
