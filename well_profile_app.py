@@ -172,7 +172,7 @@ def add_well_profile_app():
                 else:
                     df = pd.read_csv(uploaded_file)
 
-                trajectory = wp.load(df, set_info={'units': units}, set_start=start)
+                trajectory = wp.load(df, equidistant=False, set_info={'units': units}, set_start=start)
                 wellbores_data.append(trajectory)
                 wellbores_names.append(well_name)
 
