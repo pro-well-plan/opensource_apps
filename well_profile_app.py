@@ -27,25 +27,19 @@ def add_well_profile_app():
             ('Load existing trajectory', 'Create shape-based trajectory', 'Create trajectory from 2 points')
         )
 
-    units = st.selectbox(
-        'Select the system of units',
-        ('metric', 'english')
-    )
+    length_units = 'm'
 
-    if units == 'metric':
-        length_units = 'm'
-    else:
-        length_units = 'ft'
+    if building_preference != 'Create trajectory from 2 points':
+        units = st.selectbox(
+            'Select the system of units',
+            ('metric', 'english')
+        )
+        if units == 'english':
+            length_units = 'ft'
 
     if building_preference == 'Create trajectory from 2 points':
         st.markdown('### Set kick-off point:')
-        c1, c2, c3 = st.beta_columns(3)
-        with c1:
-            kop_north = st.number_input("north", value=0, step=10)
-        with c2:
-            kop_east = st.number_input("east", value=0, step=10)
-        with c3:
-            kop_depth = st.number_input("tvd", value=100, step=10)
+        kop_depth = st.number_input("tvd", value=100, step=10)
 
         st.markdown('### Set target point:')
         c1, c2, c3 = st.beta_columns(3)
@@ -55,7 +49,7 @@ def add_well_profile_app():
             target_east = st.number_input("east", value=800, step=10)
         with c3:
             target_depth = st.number_input("tvd", value=800, step=10)
-        traj = wp.two_points({'kickoff': {'north': kop_north, 'east': kop_east, 'tvd': kop_depth},
+        traj = wp.two_points({'kickoff': {'north': 0, 'east': 0, 'tvd': kop_depth},
                               'target': {'north': target_north, 'east': target_east, 'tvd': target_depth}})
 
         data_and_plot(traj)
