@@ -150,15 +150,19 @@ def add_pwploads_app():
         settings['testing']['cementingPressure'] = st.number_input('Cementing Pressure test, psi:', value=4000,
                                                                    step=100)
 
-    if st.button('Generate plot'):
+    plots = {'Triaxial Envelope': 'vme', 'Load Profiles': 'pressureDiff', 'Safety Factors (Axial)': 'axial',
+             'Safety Factors (Burst)': 'burst', 'Safety Factors (Collapse)': 'collapse'}
+    plot_type = st.selectbox("Generate Plot",
+                             ['None']+list(plots.keys()))
 
+    if plot_type != 'None':
         if trajectory is not None:
 
             casing.add_trajectory(trajectory.trajectory)
 
             casing.run_loads(settings)
 
-            fig = casing.plot()
+            fig = casing.plot(plot_type=plots[plot_type])
 
             st.plotly_chart(fig)
 
