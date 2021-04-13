@@ -5,4 +5,4 @@ torque_drag==0.0.8
 streamlit
 pandas==1.2.2
 openpyxl==3.0.6
-pwploads==0.3.0
+pwploads==0.4.0

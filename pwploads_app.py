@@ -43,7 +43,7 @@ def add_pwploads_app():
         else:
             df = pd.read_csv(uploaded_file)
 
-        trajectory = wp.load(df, units='metric')
+        trajectory = wp.load(df, equidistant=False, set_info={'units': 'metric'})
 
     st.markdown('#### 2. Create a casing with the specifications you need')
 
@@ -56,6 +56,7 @@ def add_pwploads_app():
             'tocMd': 1000,
             'weight': 100,
             'yield': 80000,
+            'top': 200,
             'e': 29e6}
 
     settings = {'densities': {'mud': 1.2,
@@ -86,6 +87,7 @@ def add_pwploads_app():
         pipe['od'] = st.number_input('OD, [in]:', value=8.0, step=0.1)
         pipe['id'] = st.number_input('ID, [in]:', value=7.2, step=0.1)
         pipe['shoeDepth'] = st.number_input('Shoe depth, [m]:', value=1500, min_value=10, step=100)
+        pipe['top'] = st.number_input('Top depth MD, [m]:', value=1500, min_value=10, step=100)
 
     if st.checkbox('Set Material Properties'):
         pipe['weight'] = st.number_input('Nominal weight, [kg/m]:', value=100, step=1)
@@ -99,7 +101,7 @@ def add_pwploads_app():
 
     if st.checkbox('Set Design Factors'):
         df['pipe']['triaxial'] = st.number_input('Von Mises:', value=1.25, step=0.1)
-        df['pipe']['busrt'] = st.number_input('API - Burst:', value=1.1, step=0.1)
+        df['pipe']['burst'] = st.number_input('API - Burst:', value=1.1, step=0.1)
         df['pipe']['collapse'] = st.number_input('API - Collapse:', value=1.1, step=0.1)
         df['pipe']['tension'] = st.number_input('API - Tension:', value=1.3, step=0.1)
         df['pipe']['compression'] = st.number_input('API - Compression:', value=1.3, step=0.1)
@@ -152,7 +154,7 @@ def add_pwploads_app():
 
         if trajectory is not None:
 
-            casing.add_trajectory(trajectory)
+            casing.add_trajectory(trajectory.trajectory)
 
             casing.run_loads(settings)
 
