@@ -24,6 +24,8 @@ def add_well_logs_app():
 
         if number > 0:
             df_file = lasio.read(string).df()
+            df_file.index.name = 'DEPT'
+            df_file['MD '+'(ref)'] = df_file.index.values
             session_state.df = df_file
             session_state.logs_list = list(session_state.df.columns)
         logs = st.multiselect('Select the logs to be included',
@@ -32,7 +34,7 @@ def add_well_logs_app():
 
         if len(logs) == 1:
             st.warning('Please select at least two logs')
-        if len(logs) > 1:
+        else:
             df_final = session_state.df[logs]
             fig = ags.plot_log(df_final)
             st.pyplot(fig)
