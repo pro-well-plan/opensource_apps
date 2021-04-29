@@ -14,18 +14,19 @@ def add_pwploads_app():
             well designs easier and faster. New features are added as they are needed; '
             'suggestions and contributions of all kinds are very welcome.')
 
-    st.markdown('[source code]'
-                '(https://github.com/pro-well-plan/pwploads)')
-
-    st.markdown('[python package]'
-                '(https://pypi.org/project/pwploads/)')
-
-    st.markdown('[documentation]'
-                '(https://pwploads.readthedocs.io/en/latest/)')
-
-    st.markdown('[About our Open Source initiative]'
-                '(https://prowellplan.com/modern-drilling-organization/'
-                'open-source-boosting-the-digital-transformation)')
+    c1, c2, c3, c4, c5 = st.beta_columns(5)
+    with c1:
+        st.markdown("[![Github](https://img.shields.io/badge/source-pwploads-green.svg?logo=github)]"
+                    "(https://github.com/pro-well-plan/pwploads)")
+    with c2:
+        st.markdown("[![PyPI version](https://badge.fury.io/py/pwploads.svg)]"
+                    "(https://badge.fury.io/py/pwploads)")
+    with c3:
+        st.markdown("[![Documentation Status](https://readthedocs.org/projects/pwploads/badge/?version=latest)]"
+                    "(http://pwploads.readthedocs.io/?badge=latest)")
+    with c4:
+        st.markdown("[![Build Status](https://www.travis-ci.org/pro-well-plan/pwploads.svg?branch=master)]"
+                    "(https://www.travis-ci.org/pro-well-plan/pwploads)")
 
     st.markdown('#### 1. Load the wellbore trajectory')
 

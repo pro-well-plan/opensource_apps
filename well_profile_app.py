@@ -13,14 +13,19 @@ def add_well_profile_app():
     st.info('well_profile is a python package to generate or load wellbore profiles in 3D. Features are added \
             as they are needed; suggestions and contributions of all kinds are very welcome.')
 
-    st.markdown('[source code]'
-                '(https://github.com/pro-well-plan/well_profile)')
-
-    st.markdown('[python package]'
-                '(https://pypi.org/project/well-profile/)')
-
-    st.markdown('[About our Open Source initiative]'
-                '(https://prowellplan.com/modern-drilling-organization/open-source-boosting-the-digital-transformation)')
+    c1, c2, c3, c4, c5 = st.beta_columns(5)
+    with c1:
+        st.markdown("[![Github](https://img.shields.io/badge/source-well_profile-green.svg?logo=github)]"
+                    "(https://github.com/pro-well-plan/well_profile)")
+    with c2:
+        st.markdown("[![PyPI version](https://badge.fury.io/py/well-profile.svg)]"
+                    "(https://badge.fury.io/py/well-profile)")
+    with c3:
+        st.markdown("[![Documentation Status](https://readthedocs.org/projects/well_profile/badge/?version=latest)]"
+                    "(http://well_profile.readthedocs.io/?badge=latest)")
+    with c4:
+        st.markdown("[![Build Status](https://www.travis-ci.org/pro-well-plan/well_profile.svg?branch=master)]"
+                    "(https://www.travis-ci.org/pro-well-plan/well_profile)")
 
     building_preference = st.selectbox(
             'Select the way to start:',

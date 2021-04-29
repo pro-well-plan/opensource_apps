@@ -15,14 +15,13 @@ def add_petrodc_app():
     st.info('petrodc is a python package to get datasets from public sources. New sources are  \
                 added as they are tested; suggestions and contributions of all kinds are very welcome.')
 
-    st.markdown('[source code]'
-                '(https://github.com/pro-well-plan/petrodc)')
-
-    st.markdown('[python package]'
-                '(https://pypi.org/project/petrodc/)')
-
-    st.markdown('[About our Open Source initiative]'
-                '(https://prowellplan.com/modern-drilling-organization/open-source-boosting-the-digital-transformation)')
+    c1, c2, c3, c4, c5 = st.beta_columns(5)
+    with c1:
+        st.markdown("[![Github](https://img.shields.io/badge/source-petrodc-green.svg?logo=github)]"
+                    "(https://github.com/pro-well-plan/petrodc)")
+    with c2:
+        st.markdown("[![PyPI version](https://badge.fury.io/py/petrodc.svg)]"
+                    "(https://badge.fury.io/py/petrodc)")
 
     database = st.selectbox(
         'Select the data source:',
