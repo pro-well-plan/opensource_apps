@@ -1,4 +1,4 @@
-well_profile==0.5.3
+well_profile==0.7.0
 petrodc==0.2.0b1
 pwptemp==0.3.0a
 torque_drag==0.0.8
