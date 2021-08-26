@@ -210,6 +210,13 @@ def add_well_profile_app():
                         link = f'<a href="data:file/csv;base64,{b64}" download="wellpath.csv">Download dataset</a>'
                         st.markdown(link, unsafe_allow_html=True)
 
+                interp_pt = st.number_input("Data at MD depth (" + length_units + ")", value=0.0, step=10.0,
+                                            key='interp' + str(x), min_value=0.0,
+                                            max_value=float(trajectory.trajectory[-1]['md']))
+
+                if interp_pt != 0:
+                    st.write(trajectory.get_point(interp_pt))
+
         if len(wellbores_data) >= 1:
             st.write('-----------------')
             style = {'units': units}
@@ -258,6 +265,8 @@ def add_well_profile_app():
                     xaxis = st.selectbox('X axis:',
                                          ('md',
                                           'tvd',
+                                          'north',
+                                          'east',
                                           'dl',
                                           'dls',
                                           'inc',
@@ -269,7 +278,9 @@ def add_well_profile_app():
                                           'dl',
                                           'dls',
                                           'md',
-                                          'tvd'))
+                                          'tvd',
+                                          'north',
+                                          'east'))
             else:
                 xaxis = yaxis = None
             fig = wellbores_data[0].plot(plot_type=plot_type,
