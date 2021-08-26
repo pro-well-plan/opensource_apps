@@ -14,7 +14,7 @@ def add_pwploads_app():
             well designs easier and faster. New features are added as they are needed; '
             'suggestions and contributions of all kinds are very welcome.')
 
-    c1, c2, c3, c4, c5 = st.beta_columns(5)
+    c1, c2, c3, c4, c5 = st.columns(5)
     with c1:
         st.markdown("[![Github](https://img.shields.io/badge/source-pwploads-green.svg?logo=github)]"
                     "(https://github.com/pro-well-plan/pwploads)")

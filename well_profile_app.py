@@ -13,7 +13,7 @@ def add_well_profile_app():
     st.info('well_profile is a python package to generate or load wellbore profiles in 3D. Features are added \
             as they are needed; suggestions and contributions of all kinds are very welcome.')
 
-    c1, c2, c3, c4, c5 = st.beta_columns(5)
+    c1, c2, c3, c4, c5 = st.columns(5)
     with c1:
         st.markdown("[![Github](https://img.shields.io/badge/source-well_profile-green.svg?logo=github)]"
                     "(https://github.com/pro-well-plan/well_profile)")
@@ -42,7 +42,7 @@ def add_well_profile_app():
         kop_depth = st.number_input("tvd", value=100, step=10)
 
         st.markdown('### Set target point:')
-        c1, c2, c3 = st.beta_columns(3)
+        c1, c2, c3 = st.columns(3)
         with c1:
             target_north = st.number_input("north", value=500, step=10)
         with c2:
@@ -143,7 +143,7 @@ def add_well_profile_app():
 
         st.set_option('deprecation.showfileUploaderEncoding', False)
 
-        c1, c2 = st.beta_columns(2)
+        c1, c2 = st.columns(2)
 
         with c1:
             wells_no = st.number_input('Number of files:', step=1, value=1)
@@ -166,7 +166,7 @@ def add_well_profile_app():
 
             st.write('_________________')
 
-            c1, c2 = st.beta_columns(2)
+            c1, c2 = st.columns(2)
             with c1:
                 well_name = st.text_input('Set name:', value='well ' + str(x+1))
             with c2:
@@ -185,7 +185,7 @@ def add_well_profile_app():
                     df = pd.read_csv(uploaded_file)
 
                 if st.checkbox('Set initial point:', key='set_start' + str(x)):
-                    c1, c2 = st.beta_columns(2)
+                    c1, c2 = st.columns(2)
                     with c1:
                         start_north = st.number_input("north, " + length_units, value=0, step=10,
                                                       key='initial_north' + str(x))
@@ -197,7 +197,7 @@ def add_well_profile_app():
                 wellbores_data.append(trajectory)
                 wellbores_names.append(well_name)
 
-                c1, c2 = st.beta_columns(2)
+                c1, c2 = st.columns(2)
                 with c1:
                     if st.checkbox("Show loaded data", value=False, key='rawLoad' + str(x)):
                         st.dataframe(df, width=1000)
@@ -221,7 +221,7 @@ def add_well_profile_app():
             st.write('-----------------')
             style = {'units': units}
 
-            c1, c2, c3 = st.beta_columns(3)
+            c1, c2, c3 = st.columns(3)
 
             with c1:
                 st.write('')
@@ -260,7 +260,7 @@ def add_well_profile_app():
             st.warning('No data loaded')
         else:
             if plot_type == 'vs':
-                c1, c2 = st.beta_columns(2)
+                c1, c2 = st.columns(2)
                 with c1:
                     xaxis = st.selectbox('X axis:',
                                          ('md',
@@ -295,7 +295,7 @@ def add_well_profile_app():
 def settings():
     st.write('-----------------')
 
-    c1, c2, c3 = st.beta_columns(3)
+    c1, c2, c3 = st.columns(3)
     show_data = False
     with c1:
         st.write('##')
@@ -349,7 +349,7 @@ def set_parameters(profile, length_units):
     mdt = st.number_input("Final depth, " + length_units, value=3000, step=100)
 
     st.write('Surface location')
-    c1, c2, c3 = st.beta_columns(3)
+    c1, c2, c3 = st.columns(3)
     with c1:
         start_north = st.number_input("north, " + length_units, value=0, step=10)
     with c2:
@@ -361,7 +361,7 @@ def set_parameters(profile, length_units):
     result = {'mdt': mdt, 'start': start}
 
     if profile != 'V':
-        c1, c2 = st.beta_columns(2)
+        c1, c2 = st.columns(2)
         with c1:
             result['kop'] = st.number_input("Kick-off point, " + length_units, value=1000, step=100)
         with c2:
@@ -371,7 +371,7 @@ def set_parameters(profile, length_units):
         result['build_angle'] = st.number_input("Build angle, °", value=45, step=1)
 
     if profile == 'S':
-        c1, c2, c3 = st.beta_columns(3)
+        c1, c2, c3 = st.columns(3)
         with c1:
             result['build_angle'] = st.number_input("Build angle, °", value=45, step=1)
         with c2:
@@ -380,7 +380,7 @@ def set_parameters(profile, length_units):
             result['eod'] = st.number_input("End of build 2, " + length_units, value=2500, step=100)
 
     if profile == 'H2':
-        c1, c2, c3 = st.beta_columns(3)
+        c1, c2, c3 = st.columns(3)
         with c1:
             result['build_angle'] = st.number_input("Build angle, °", value=45, step=1)
         with c2:
