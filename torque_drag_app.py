@@ -13,14 +13,13 @@ def add_torque_drag_app():
     st.info('torque_drag is a python package for Torque & Drag calculations. New features are  \
                 added as they are needed; suggestions and contributions of all kinds are very welcome.')
 
-    st.markdown('[source code]'
-                '(https://github.com/pro-well-plan/torque_drag)')
-
-    st.markdown('[python package]'
-                '(https://pypi.org/project/torque_drag/)')
-
-    st.markdown('[About our Open Source initiative]'
-                '(https://prowellplan.com/modern-drilling-organization/open-source-boosting-the-digital-transformation)')
+    c1, c2, c3, c4, c5 = st.columns(5)
+    with c1:
+        st.markdown("[![Github](https://img.shields.io/badge/source-torque_drag-green.svg?logo=github)]"
+                    "(https://github.com/pro-well-plan/torque_drag)")
+    with c2:
+        st.markdown("[![PyPI version](https://badge.fury.io/py/torque-drag.svg)]"
+                    "(https://badge.fury.io/py/torque-drag)")
 
     file_type = st.selectbox("File format",
                              ['excel', 'csv'],

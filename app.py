@@ -19,7 +19,7 @@ def main():
     st.image('https://github.com/pro-well-plan/opensource_apps/raw/master/resources/pwp-bgd.gif',
              use_column_width=True)
 
-    selection = main_selection()
+    selection = add_side_bar()
 
     if selection == 'Wellbore 3D':
         add_well_profile_app()
@@ -40,8 +40,6 @@ def main():
         add_well_logs_app()
 
     add_footer()
-
-    add_side_bar()
 
 
 if __name__ == '__main__':

@@ -14,14 +14,19 @@ def add_pwptemp_app():
              the well. New features are added as they are needed; '
             'suggestions and contributions of all kinds are very welcome.')
 
-    st.markdown('[source code]'
-                '(https://github.com/pro-well-plan/pwptemp)')
-
-    st.markdown('[python package]'
-                '(https://pypi.org/project/pwptemp/)')
-
-    st.markdown('[About our Open Source initiative]'
-                '(https://prowellplan.com/modern-drilling-organization/open-source-boosting-the-digital-transformation)')
+    c1, c2, c3, c4, c5 = st.columns(5)
+    with c1:
+        st.markdown("[![Github](https://img.shields.io/badge/source-pwptemp-green.svg?logo=github)]"
+                    "(https://github.com/pro-well-plan/pwptemp)")
+    with c2:
+        st.markdown("[![PyPI version](https://badge.fury.io/py/pwptemp.svg)]"
+                    "(https://badge.fury.io/py/pwptemp)")
+    with c3:
+        st.markdown("[![Documentation Status](https://readthedocs.org/projects/pwptemp/badge/?version=latest)]"
+                    "(http://pwptemp.readthedocs.io/?badge=latest)")
+    with c4:
+        st.markdown("[![Build Status](https://www.travis-ci.org/pro-well-plan/pwptemp.svg?branch=master)]"
+                    "(https://www.travis-ci.org/pro-well-plan/pwptemp)")
 
     inputs = set_default_values()
 
