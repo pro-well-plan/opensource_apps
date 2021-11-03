@@ -37,7 +37,7 @@ def add_well_logs_app():
         else:
             df_final = session_state.df[logs]
             fig = ags.plot_log(df_final)
-            st.pyplot(fig)
+            st.plotly_chart(fig)
 
             st.dataframe(df_final)
             csv = df_final.to_csv(index=False)
