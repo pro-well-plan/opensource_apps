@@ -71,7 +71,7 @@ def add_well_profile_app():
         if profile == 'Vertical':
             profile = 'V'
             param_dict = set_parameters(profile, length_units)
-            traj = wp.get(param_dict['mdt'], points=param_dict['cells_no'], set_info={'units': units},
+            traj = wp.get(param_dict['mdt'], points=100, set_info={'units': units},
                           set_start=param_dict['start'])
 
             data_and_plot(traj, show_data, dark, color)
@@ -81,7 +81,7 @@ def add_well_profile_app():
             profile = 'J'
             param_dict = set_parameters(profile, length_units)
             traj = wp.get(param_dict['mdt'],
-                          points=param_dict['cells_no'],
+                          points=100,
                           profile=profile,
                           build_angle=param_dict['build_angle'],
                           kop=param_dict['kop'],
@@ -96,7 +96,7 @@ def add_well_profile_app():
             profile = 'S'
             param_dict = set_parameters(profile, length_units)
             traj = wp.get(param_dict['mdt'],
-                          points=param_dict['cells_no'],
+                          points=100,
                           profile=profile,
                           build_angle=param_dict['build_angle'],
                           kop=param_dict['kop'],
@@ -127,7 +127,7 @@ def add_well_profile_app():
             param_dict = set_parameters(profile, length_units)
 
             traj = wp.get(param_dict['mdt'],
-                          points=param_dict['cells_no'],
+                          points=100,
                           profile=profile,
                           build_angle=param_dict['build_angle'],
                           kop=param_dict['kop'],
